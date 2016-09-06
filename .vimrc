@@ -1,6 +1,7 @@
 "====================================
 " PLUGIN-MANAGER
 "====================================
+"
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -14,6 +15,10 @@ Plugin 'scrooloose/nerdtree'
 " JavaScript stuff
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
+" Web development
+Plugin 'mattn/emmet-vim'
+" auto close (X)HTML tags
+Plugin 'alvan/vim-closetag'
 " auto close brackets, quotes, ...
 Plugin 'Raimondi/delimitMate'
 " auto completion
@@ -25,12 +30,41 @@ Plugin 'moll/vim-node'
 call vundle#end()
 filetype plugin indent on
 
+"====================================
+" FUNCTIONS
+"====================================
+
+function! ToPrevLine()
+    let l:lineN = line('.')
+    let l:colN = col('.')
+        
+    if l:colN == 1 && l:lineN > 1
+        return "\<up>\<end>"
+    else
+        return "\<left>"
+    endif
+endfunction
+
+function! ToNextLine()
+    let l:lineN = line('.')
+    let l:colN = col('.')
+
+    let l:line = getline('.')
+    let l:nLines = line('$')
+
+    if l:colN == strlen(l:line) + 1 && l:lineN < l:nLines
+        return "\<down>\<home>"
+    else
+        return "\<right>"
+    endif
+endfunction
 
 "====================================
 " CONFIGURATION
 "====================================
 
 set t_Co=256
+set updatetime=500
 
 " color scheme
 colorscheme gotham256
@@ -49,6 +83,10 @@ let g:javascript_conceal_static         = "•"
 let g:javascript_conceal_super          = "Ω"
 let g:javascript_conceal_arrow_function = "⇒"
 
+" HTML
+let g:user_emmet_mode='a'   " enable all function in all mode.
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
+
 " line overflow
 set nowrap
 " line numbers
@@ -61,11 +99,29 @@ set expandtab
 "=====================================
 " STARTUP
 "=====================================
+
+highlight WordUnderCursor ctermbg=DarkGray guibg=green
+
+autocmd CursorHoldI *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
 autocmd vimenter * NERDTree
 
 "=====================================
 " KEY MAPPINGS
 "=====================================
 
-"inoremap {<return> {<return>}<C-o>O<tab>
+" <shift>+<tab> to tab backwards
 inoremap {<return> {<return>}<C-o>O
+
+" tab forward/backward
+inoremap <S-tab> <C-d>
+vnoremap <tab> >
+vnoremap <S-tab> <lt>
+
+" go to next previous line when pressing left/right
+inoremap <left> <c-r>=ToPrevLine()<return>
+inoremap <right> <c-r>=ToNextLine()<return>
+
+" map F7, F8 to next, previous tab
+map <F7> :tabp<return>
+map <F8> :tabn<return>
