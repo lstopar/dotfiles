@@ -1,0 +1,190 @@
+" SOME HACKS TO ENABLE FEATURES
+" search for plugins in the ~/.vim/bundle directory
+"execute pathogen#infect()
+
+
+"=====================================
+" PLUGIN-MANAGER
+"=====================================
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'flazz/vim-colorschemes'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+"Plugin 'jelera/vim-javascript-syntax'
+
+" auto close brackets, quotes, ...
+"Plug 'Raimondi/delimitMate'
+
+"Plug 'Valloric/YouCompleteMe'
+
+call vundle#end()
+filetype plugin indent on
+
+
+" These are the tweaks I apply to YCM's config, you don't need them but they
+" might help.
+" YCM gives you popups and splits by default that some people might not
+" like, so these should tidy it up a bit for you.
+"let g:ycm_add_preview_to_completeopt=0
+"let g:ycm_confirm_extra_conf=0
+"set completeopt-=preview
+
+"=====================================
+" HACKS
+"=====================================
+
+set t_Co=256
+"syntax on
+"set background=dark
+"colorscheme distinguished
+
+"filetype plugin indent on
+"syntax on
+
+"=====================================
+" GENERAL EDITOR SETTINGS
+"=====================================
+
+"colorscheme delek
+" line numbering
+set number
+" don't break lines but rather scroll horizontally
+set nowrap
+" tab width
+set tabstop=4
+" automatic indentation
+set autoindent
+
+set updatetime=500
+
+"let g:javascript_plugin_jsdoc = 1
+
+let g:javascript_plugin_jsdoc = 1
+
+" conceal
+set cole=1
+let g:javascript_conceal = 1
+let g:javascript_conceal_function		= "φ"
+let g:javascript_conceal_null           = "ø"
+let g:javascript_conceal_this           = "@"
+let g:javascript_conceal_undefined      = "¿"
+let g:javascript_conceal_arrow_function = "⇒"
+
+
+" HIGHLIGHTS
+highlight WordUnderCursor ctermbg=DarkGray guibg=green
+
+" FUNCTIONS
+function! ToPrevLine()
+	let l:lineN = line('.')
+	let l:colN = col('.')
+
+	if l:colN == 1 && l:lineN > 1
+		return "\<up>\<end>"
+	else
+		return "\<left>"
+	endif
+endfunction
+
+function! ToNextLine()
+	let l:lineN = line('.')
+	let l:colN = col('.')
+
+	let l:line = getline('.')
+	let l:nLines = line('$')
+
+	if l:colN == strlen(l:line) + 1 && l:lineN < l:nLines
+		return "\<down>\<home>"
+	else
+		return "\<right>"
+	endif
+endfunction
+
+function! IsInControlClause()
+	let l:line = getline('.')
+	
+	let l:isIf = matchstr(line, 'if \(\)')
+
+	echo l:isIf
+
+	if empty(l:isIf)
+		return 0
+	else
+		return 1
+	endif
+endfunction
+
+
+function! InsertEndInControlClause()
+	if IsInControlClause()
+		return "\<end>"
+	else
+		return "\<tab>"
+	endif
+endfunction
+
+function! IgnoreIfOnCursor(targetChar)
+	let l:currChar = matchstr(getline('.'), '\%' . col('.') . 'c.')
+
+	if l:currChar ==# a:targetChar
+		return "\<right>"
+	else
+		return a:targetChar
+	endif
+endfunction
+
+" highlight the word under the cursor
+"autocmd CursorHoldI *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+"autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
+autocmd vimenter * NERDTree
+
+"===========================================
+" MAPPINGS - INSERT MODE
+"===========================================
+
+" <left> in the first column puts you in the upper line, while 
+" <right in the last column puts you in the next line
+inoremap <left> <c-r>=ToPrevLine()<return>
+inoremap <right> <c-r>=ToNextLine()<return>
+
+if 0
+
+
+" multi-line comments
+"inoremap /*<return> /*<return><space>*<return>*/<up><space>
+"inoremap /**<return> /**<return><space>*<return>*/<up><space>
+
+" <shift>+<tab> to tab backwards
+inoremap <S-tab> <C-d>
+
+" auto close single quote
+"inoremap ' ''<left>
+" auto close a curved bracket 
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap ) <c-r>=IgnoreIfOnCursor(')')<return>
+"inoremap ] <c-r>=IgnoreIfOnCursor(']')<return>
+
+" auto close a curly bracket
+"inoremap {<CR> {<CR>}<C-o>O<tab>
+
+" tab character
+"inoremap <tab> <c-r>=InsertEndInControlClause()<return>
+
+endif
+
+
+"===========================================
+" MAPPINGS - NORMAL MODE
+"===========================================
+
+"nnoremap <CTRL-l> :NERDTreeToggle<return>
+"nnoremap <CTRL-x> d
+"nnoremap <CTRL-v> p
+map <F7> :tabp
+map <F8> :tabn
