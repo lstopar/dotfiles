@@ -20,7 +20,7 @@ Plugin 'mattn/emmet-vim'
 " auto close (X)HTML tags
 Plugin 'alvan/vim-closetag'
 " auto close brackets, quotes, ...
-Plugin 'Raimondi/delimitMate'
+Plugin 'jiangmiao/auto-pairs'
 " auto completion
 Plugin 'Valloric/YouCompleteMe'
 
@@ -110,7 +110,6 @@ set expandtab
 " STATUS LINE
 " first, enable status line always
 set laststatus=2
-
 " now set it up to change the status line based on mode
 if version >= 700
     au InsertEnter * hi StatusLine term=reverse ctermbg=8 gui=undercurl guisp=Magenta
@@ -134,9 +133,6 @@ autocmd vimenter * NERDTree
 "=====================================
 " KEY MAPPINGS
 "=====================================
-
-" <shift>+<tab> to tab backwards
-inoremap {<return> {<return>}<C-o>O
 
 " tab forward/backward
 inoremap <S-tab> <C-d>
