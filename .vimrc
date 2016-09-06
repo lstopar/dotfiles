@@ -37,7 +37,7 @@ filetype plugin indent on
 function! ToPrevLine()
     let l:lineN = line('.')
     let l:colN = col('.')
-        
+
     if l:colN == 1 && l:lineN > 1
         return "\<up>\<end>"
     else
@@ -58,6 +58,17 @@ function! ToNextLine()
         return "\<right>"
     endif
 endfunction
+
+function! ToPrevLineNm()
+    normal <left>
+    "return "\<left>"
+endfunction
+
+
+function! ToNextLineNm()
+    return "\<right>"
+endfunction
+
 
 "====================================
 " CONFIGURATION
@@ -96,6 +107,20 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" STATUS LINE
+" first, enable status line always
+set laststatus=2
+
+" now set it up to change the status line based on mode
+if version >= 700
+    au InsertEnter * hi StatusLine term=reverse ctermbg=8 gui=undercurl guisp=Magenta
+    au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
+
+    au VimEnter * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
+endif
+
+" CURSOR
+
 "=====================================
 " STARTUP
 "=====================================
@@ -121,6 +146,9 @@ vnoremap <S-tab> <lt>
 " go to next previous line when pressing left/right
 inoremap <left> <c-r>=ToPrevLine()<return>
 inoremap <right> <c-r>=ToNextLine()<return>
+
+" yank from the cursor to the end of the line
+nnoremap Y y$
 
 " map F7, F8 to next, previous tab
 map <F7> :tabp<return>
