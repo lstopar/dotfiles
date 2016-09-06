@@ -98,6 +98,10 @@ let g:javascript_conceal_arrow_function = "⇒"
 let g:user_emmet_mode='a'   " enable all function in all mode.
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
 
+" YouCompleteMe
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+
 " line overflow
 set nowrap
 " line numbers
@@ -135,7 +139,9 @@ autocmd vimenter * NERDTree
 "=====================================
 
 " tab forward/backward
-inoremap <S-tab> <C-d>
+nnoremap <S-Tab> <<
+nnoremap <tab> >>
+inoremap <S-Tab> <C-d>
 vnoremap <tab> >
 vnoremap <S-tab> <lt>
 
