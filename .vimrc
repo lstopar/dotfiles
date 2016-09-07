@@ -106,6 +106,8 @@ let g:ycm_key_list_previous_completion=[]
 set nowrap
 " line numbers
 set number
+" highlight the current line
+set cursorline
 " tab settings
 set tabstop=4
 set shiftwidth=4
