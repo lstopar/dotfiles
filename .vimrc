@@ -133,6 +133,8 @@ endif
 highlight WordUnderCursor ctermbg=DarkGray guibg=green
 
 autocmd CursorHoldI *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd CursorHold *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
 autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
 autocmd vimenter * NERDTree
 
