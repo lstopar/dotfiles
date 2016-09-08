@@ -150,18 +150,18 @@ autocmd vimenter * NERDTree
 " tab forward/backward
 nnoremap <S-Tab> <<
 nnoremap <tab> >>
-"inoremap <S-Tab> <C-d>
+inoremap <S-Tab> <C-d>
 vnoremap <tab> >
 vnoremap <S-tab> <lt>
 
 " go to next previous line when pressing left/right
-"inoremap <left> <c-r>=ToPrevLine()<return>
-"inoremap <right> <c-r>=ToNextLine()<return>
+inoremap <left> <c-r>=ToPrevLine()<return>
+inoremap <right> <c-r>=ToNextLine()<return>
 
 inoremap <C-e> <esc>A
 inoremap <C-a> <esc>I
 
-inoremap <esc> <esc>l
+"inoremap <esc> <esc>l
 
 " yank from the cursor to the end of the line
 nnoremap Y y$
@@ -181,6 +181,3 @@ map <C-l> <C-W>l
 " map F7, F8 to next, previous tab
 map <F7> :tabp<return>
 map <F8> :tabn<return>
-
-" fix the broken arrow keys
-set nocompatible
