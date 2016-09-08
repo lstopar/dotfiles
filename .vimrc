@@ -91,6 +91,18 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set incsearch                   " Shows the match while typing"
+set hlsearch                    " Highlight found searches"
+set ignorecase                  " Search case insensitive...
+set smartcase                   " ... but not when search pattern contains upper case characters
+
+au FocusLost * :wa              " Set vim to save the file on focus out."
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+    set mouse=a
+endif
+
 " STATUS LINE
 " first, enable status line always
 set laststatus=2
