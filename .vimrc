@@ -101,6 +101,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
 " YouCompleteMe
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
+"set shortmess+='c'
 
 " line overflow
 set nowrap
