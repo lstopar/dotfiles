@@ -69,7 +69,6 @@ function! ToNextLineNm()
     return "\<right>"
 endfunction
 
-
 "====================================
 " CONFIGURATION
 "====================================
@@ -80,27 +79,6 @@ set updatetime=500
 " color scheme
 colorscheme gotham256
 "colorscheme grb256
-
-" conceal
-set cole=1
-let g:javascript_conceal_function       = "ƒ"
-let g:javascript_conceal_null           = "ø"
-let g:javascript_conceal_this           = "@"
-let g:javascript_conceal_return         = "⇚"
-let g:javascript_conceal_undefined      = "¿"
-let g:javascript_conceal_NaN            = "ℕ"
-let g:javascript_conceal_prototype      = "¶"
-let g:javascript_conceal_static         = "•"
-let g:javascript_conceal_super          = "Ω"
-let g:javascript_conceal_arrow_function = "⇒"
-
-" HTML
-let g:user_emmet_mode='a'   " enable all function in all mode.
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
-
-" YouCompleteMe
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
 
 " line overflow
 set nowrap
@@ -126,6 +104,31 @@ endif
 
 " CURSOR
 
+"====================================
+" PLUGIN CONFIGURATION
+"====================================
+
+" conceal
+set cole=1
+let g:javascript_conceal_function       = "ƒ"
+let g:javascript_conceal_null           = "ø"
+let g:javascript_conceal_this           = "@"
+let g:javascript_conceal_return         = "⇚"
+let g:javascript_conceal_undefined      = "¿"
+let g:javascript_conceal_NaN            = "ℕ"
+let g:javascript_conceal_prototype      = "¶"
+let g:javascript_conceal_static         = "•"
+let g:javascript_conceal_super          = "Ω"
+let g:javascript_conceal_arrow_function = "⇒"
+
+" HTML
+let g:user_emmet_mode='a'   " enable all function in all mode.
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
+
+" YouCompleteMe
+"let g:ycm_key_list_select_completion=[]
+"let g:ycm_key_list_previous_completion=[]
+
 "=====================================
 " STARTUP
 "=====================================
@@ -145,7 +148,7 @@ autocmd vimenter * NERDTree
 " tab forward/backward
 nnoremap <S-Tab> <<
 nnoremap <tab> >>
-inoremap <S-Tab> <C-d>
+"inoremap <S-Tab> <C-d>
 vnoremap <tab> >
 vnoremap <S-tab> <lt>
 
@@ -153,8 +156,25 @@ vnoremap <S-tab> <lt>
 inoremap <left> <c-r>=ToPrevLine()<return>
 inoremap <right> <c-r>=ToNextLine()<return>
 
+inoremap <C-e> <esc>A
+inoremap <C-a> <esc>I
+
+inoremap <esc> <esc>l
+
 " yank from the cursor to the end of the line
 nnoremap Y y$
+" Search mappings: center the line where the match is found
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>
+
+" Better split switching
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " map F7, F8 to next, previous tab
 map <F7> :tabp<return>
