@@ -1,8 +1,8 @@
+set nocompatible
 "====================================
 " PLUGIN-MANAGER
 "====================================
 "
-set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -59,17 +59,6 @@ function! ToNextLine()
     endif
 endfunction
 
-function! ToPrevLineNm()
-    normal <left>
-    "return "\<left>"
-endfunction
-
-
-function! ToNextLineNm()
-    return "\<right>"
-endfunction
-
-
 "====================================
 " CONFIGURATION
 "====================================
@@ -80,6 +69,46 @@ set updatetime=500
 " color scheme
 colorscheme gotham256
 "colorscheme grb256
+
+" line overflow
+set nowrap
+" line numbers
+set number
+" highlight the current line
+set cursorline
+" tab settings
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set incsearch                   " Shows the match while typing"
+set hlsearch                    " Highlight found searches"
+set ignorecase                  " Search case insensitive...
+set smartcase                   " ... but not when search pattern contains upper case characters
+
+au FocusLost * :wa              " Set vim to save the file on focus out."
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+    set mouse=a
+endif
+
+" STATUS LINE
+" first, enable status line always
+set laststatus=2
+" now set it up to change the status line based on mode
+if version >= 700
+    au InsertEnter * hi StatusLine term=reverse ctermbg=8 gui=undercurl guisp=Magenta
+    au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
+
+    au VimEnter * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
+endif
+
+" CURSOR
+
+"====================================
+" PLUGIN CONFIGURATION
+"====================================
 
 " conceal
 set cole=1
@@ -99,31 +128,8 @@ let g:user_emmet_mode='a'   " enable all function in all mode.
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
 
 " YouCompleteMe
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
-"set shortmess+='c'
-
-" line overflow
-set nowrap
-" line numbers
-set number
-" tab settings
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-" STATUS LINE
-" first, enable status line always
-set laststatus=2
-" now set it up to change the status line based on mode
-if version >= 700
-    au InsertEnter * hi StatusLine term=reverse ctermbg=8 gui=undercurl guisp=Magenta
-    au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
-
-    au VimEnter * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
-endif
-
-" CURSOR
+"let g:ycm_key_list_select_completion=[]
+"let g:ycm_key_list_previous_completion=[]
 
 "=====================================
 " STARTUP
@@ -132,6 +138,8 @@ endif
 highlight WordUnderCursor ctermbg=DarkGray guibg=green
 
 autocmd CursorHoldI *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd CursorHold *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
 autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
 autocmd vimenter * NERDTree
 
@@ -142,17 +150,37 @@ autocmd vimenter * NERDTree
 " tab forward/backward
 nnoremap <S-Tab> <<
 nnoremap <tab> >>
-inoremap <S-Tab> <C-d>
+"inoremap <S-Tab> <C-d>
 vnoremap <tab> >
 vnoremap <S-tab> <lt>
 
 " go to next previous line when pressing left/right
-inoremap <left> <c-r>=ToPrevLine()<return>
-inoremap <right> <c-r>=ToNextLine()<return>
+"inoremap <left> <c-r>=ToPrevLine()<return>
+"inoremap <right> <c-r>=ToNextLine()<return>
+
+inoremap <C-e> <esc>A
+inoremap <C-a> <esc>I
+
+inoremap <esc> <esc>l
 
 " yank from the cursor to the end of the line
 nnoremap Y y$
+" Search mappings: center the line where the match is found
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>
+
+" Better split switching
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " map F7, F8 to next, previous tab
 map <F7> :tabp<return>
 map <F8> :tabn<return>
+
+" fix the broken arrow keys
+set nocompatible
