@@ -27,6 +27,15 @@ Plugin 'Valloric/YouCompleteMe'
 " Node.js plugin
 Plugin 'moll/vim-node'
 
+" expanding selected regions
+Plugin 'terryma/vim-expand-region'
+
+" comment out sections of code
+Plugin 'tpope/vim-commentary'
+
+" fancy status line
+Plugin 'vim-airline/vim-airline'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -97,12 +106,12 @@ endif
 " first, enable status line always
 set laststatus=2
 " now set it up to change the status line based on mode
-if version >= 700
-    au InsertEnter * hi StatusLine term=reverse ctermbg=8 gui=undercurl guisp=Magenta
-    au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
-
-    au VimEnter * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
-endif
+"if version >= 700
+"    au InsertEnter * hi StatusLine term=reverse ctermbg=8 gui=undercurl guisp=Magenta
+"    au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
+"
+"    au VimEnter * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
+"endif
 
 " CURSOR
 
@@ -130,6 +139,13 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
 " YouCompleteMe
 "let g:ycm_key_list_select_completion=[]
 "let g:ycm_key_list_previous_completion=[]
+
+" expanding selection region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" commenting sections of code using CTRL+/
+vmap <C-_> gc
 
 "=====================================
 " STARTUP
