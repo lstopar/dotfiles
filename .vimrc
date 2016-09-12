@@ -112,6 +112,13 @@ au FocusLost * :wa              " Set vim to save the file on focus out."
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
     set mouse=a
+
+    " fix mouse clicks past column 220
+    if has('mouse_sgr')
+        set ttymouse=sgr
+    else
+        set ttymouse=xterm2
+    endif
 endif
 
 " STATUS LINE
@@ -132,17 +139,20 @@ set laststatus=2
 "====================================
 
 " conceal
-set cole=1
+set cole=0
 let g:javascript_conceal_function       = "ƒ"
 let g:javascript_conceal_null           = "ø"
 let g:javascript_conceal_this           = "@"
-let g:javascript_conceal_return         = "⇚"
+" let g:javascript_conceal_return         = "⇚"
+let g:javascript_conceal_return         = "<"
 let g:javascript_conceal_undefined      = "¿"
 let g:javascript_conceal_NaN            = "ℕ"
 let g:javascript_conceal_prototype      = "¶"
 let g:javascript_conceal_static         = "•"
 let g:javascript_conceal_super          = "Ω"
 let g:javascript_conceal_arrow_function = "⇒"
+"let g:javascript_conceal_arrow_function = ">"
+
 
 " HTML
 let g:user_emmet_mode='a'   " enable all function in all mode.
