@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt-get install -y cmake
-sudo apt-get install -y python-dev
+#sudo apt-get install -y cmake
+#sudo apt-get install -y python-dev
 
 START_DIR=`pwd`
 

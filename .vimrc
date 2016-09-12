@@ -76,7 +76,8 @@ set t_Co=256
 set updatetime=500
 
 " color scheme
-colorscheme gotham256
+"colorscheme gotham256
+colorscheme gotham
 "colorscheme grb256
 
 " line overflow
