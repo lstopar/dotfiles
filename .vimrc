@@ -72,13 +72,24 @@ endfunction
 " CONFIGURATION
 "====================================
 
-set t_Co=256
+" word under cursor highlighting responsiveness
 set updatetime=500
 
+"set term=xterm
+"let t_Co=256
+
+" set 256 color terminal
+if has('unix')
+    set t_Co=256
+endif
+
 " color scheme
-"colorscheme gotham256
-colorscheme gotham
+colorscheme gotham256
+"colorscheme gotham
 "colorscheme grb256
+
+" enable syntax highlighting
+syntax on
 
 " line overflow
 set nowrap
