@@ -107,6 +107,9 @@ set hlsearch                    " Highlight found searches"
 set ignorecase                  " Search case insensitive...
 set smartcase                   " ... but not when search pattern contains upper case characters
 
+" make backspace work like in other editors while in insert mode
+set backspace=indent,eol,start
+
 au FocusLost * :wa              " Set vim to save the file on focus out."
 
 " In many terminal emulators the mouse works just fine, thus enable it.
