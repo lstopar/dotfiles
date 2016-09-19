@@ -23,6 +23,7 @@ Plugin 'alvan/vim-closetag'
 Plugin 'jiangmiao/auto-pairs'
 " auto completion
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 
 " Node.js plugin
 Plugin 'moll/vim-node'
@@ -162,8 +163,14 @@ let g:user_emmet_mode='a'   " enable all function in all mode.
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
 
 " YouCompleteMe
-"let g:ycm_key_list_select_completion=[]
-"let g:ycm_key_list_previous_completion=[]
+let g:ycm_auto_trigger = 0                                  " only trigger autocomplete using <ctrl-space> (no automatic triggering)"
+let g:ycm_add_preview_to_completeopt = 0                    " use the preview window for additional info"
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1      " auto close the preview window after completion has been accepted"
+
+" Vims preview default
+" set completeopt=preview,menuone
+set completeopt=menuone
 
 " expanding selection region
 vmap v <Plug>(expand_region_expand)
@@ -191,7 +198,7 @@ autocmd vimenter * NERDTree
 " tab forward/backward
 nnoremap <S-Tab> <<
 nnoremap <tab> >>
-inoremap <S-Tab> <C-d>
+"inoremap <S-Tab> <C-d>
 vnoremap <tab> >
 vnoremap <S-tab> <lt>
 

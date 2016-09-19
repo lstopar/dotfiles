@@ -1,7 +1,10 @@
 #!/bin/bash
 
-#sudo apt-get install -y cmake
-#sudo apt-get install -y python-dev
+# sudo apt-get install -y cmake
+# sudo apt-get install -y python-dev
+# sudo apt-get install libboost-all-dev
+# sudo apt-get install clang
+# sudo apt-get install libclang-dev
 
 START_DIR=`pwd`
 
@@ -27,4 +30,7 @@ vim -i NONE -c VundleUpdate -c quitall
 
 echo 'Configuring YouCompleteMe ...'
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --tern-completer
+./install.py --clang-completer --tern-completer --system-boost
+
+# link fallback the cpp autocomplete configuration file
+# ln -s .ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
