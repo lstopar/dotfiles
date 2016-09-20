@@ -42,6 +42,15 @@ Plugin 'vim-airline/vim-airline'
 " show the current Git branch in the status bar
 Plugin 'tpope/vim-fugitive'
 
+" new plugins, still testing (got from eclipse)
+" improve paragraph detection
+Plugin 'justinmk/vim-ipmotion'
+
+" function argument handling
+Plugin 'vim-scripts/argtextobj.vim'
+" change surrounding tags, parentheses, brackets, ...
+Plugin 'tpope/vim-surround'
+
 call vundle#end()
 filetype plugin indent on
 
