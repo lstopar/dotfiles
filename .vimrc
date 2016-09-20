@@ -42,7 +42,7 @@ Plugin 'vim-airline/vim-airline'
 " show the current Git branch in the status bar
 Plugin 'tpope/vim-fugitive'
 
-" new plugins, still testing (got from eclipse)
+" NEW PLUGINS, still testing (got from eclipse)
 " improve paragraph detection
 Plugin 'justinmk/vim-ipmotion'
 
@@ -142,6 +142,10 @@ endif
 " STATUS LINE
 " first, enable status line always
 set laststatus=2
+
+" CLIPBOARD
+" copy into system clipboard whenever text is yanked
+set clipboard=unnamedplus
 
 " CURSOR
 
