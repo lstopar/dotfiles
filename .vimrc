@@ -25,6 +25,9 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
 
+" debugging C++ (TODO still working on it)
+Plugin 'vim-scripts/Conque-GDB'
+
 " Node.js plugin
 Plugin 'moll/vim-node'
 
@@ -36,6 +39,8 @@ Plugin 'tpope/vim-commentary'
 
 " fancy status line
 Plugin 'vim-airline/vim-airline'
+" show the current Git branch in the status bar
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -128,13 +133,6 @@ endif
 " STATUS LINE
 " first, enable status line always
 set laststatus=2
-" now set it up to change the status line based on mode
-"if version >= 700
-"    au InsertEnter * hi StatusLine term=reverse ctermbg=8 gui=undercurl guisp=Magenta
-"    au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
-"
-"    au VimEnter * hi StatusLine term=reverse ctermfg=0 ctermbg=1 gui=bold,reverse 
-"endif
 
 " CURSOR
 
@@ -179,6 +177,9 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " commenting sections of code using CTRL+/
 vmap <C-_> gc
 
+" Vim airline
+"let g:airline_section_b = '%{strftime("%c")}'
+
 "=====================================
 " STARTUP
 "=====================================
@@ -219,6 +220,9 @@ nnoremap N Nzzzv
 
 nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>
+
+" ignore annoying Ex mode
+nnoremap q: :q
 
 " Better split switching
 map <C-j> <C-W>j
