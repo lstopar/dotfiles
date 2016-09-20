@@ -4,8 +4,11 @@ set nocompatible
 "====================================
 "
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
+
+" Vundle plugin manager
+Plugin 'gmarik/vundle'
 
 " color schemes
 Plugin 'flazz/vim-colorschemes'
