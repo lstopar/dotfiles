@@ -90,6 +90,9 @@ endfunction
 " CONFIGURATION
 "====================================
 
+" UTF-8
+set encoding=utf-8
+
 " word under cursor highlighting responsiveness
 set updatetime=500
 
