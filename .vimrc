@@ -27,6 +27,8 @@ Plugin 'jiangmiao/auto-pairs'
 " auto completion
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " debugging C++ (TODO still working on it)
 Plugin 'vim-scripts/Conque-GDB'
