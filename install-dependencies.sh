@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo apt-get update
 
 sudo apt-get install -y $@ cmake
 sudo apt-get install -y $@ python-dev

@@ -24,7 +24,7 @@ ln -s `pwd`/.vimrc ~/.vimrc
 mkdir -p ~/.vim
 
 echo 'Creating directory ...'
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
 echo 'Installing plugins ...'
 vim -i NONE -c VundleUpdate -c quitall
 
