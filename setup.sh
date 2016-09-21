@@ -30,7 +30,8 @@ vim -i NONE -c VundleUpdate -c quitall
 
 echo 'Configuring YouCompleteMe ...'
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --tern-completer --system-boost
+# ./install.py --clang-completer --tern-completer --system-boost
+./install.py --clang-completer --tern-completer
 
 # link fallback the cpp autocomplete configuration file
 # ln -s .ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
