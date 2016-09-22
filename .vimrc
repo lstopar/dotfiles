@@ -55,6 +55,8 @@ Plugin 'justinmk/vim-ipmotion'
 Plugin 'vim-scripts/argtextobj.vim'
 " change surrounding tags, parentheses, brackets, ...
 Plugin 'tpope/vim-surround'
+" jump to matching tags
+Plugin 'tmhedberg/matchit'
 
 call vundle#end()
 filetype plugin indent on
