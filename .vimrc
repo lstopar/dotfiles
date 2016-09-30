@@ -32,6 +32,8 @@ Plugin 'honza/vim-snippets'
 
 " debugging C++ (TODO still working on it)
 Plugin 'vim-scripts/Conque-GDB'
+" debugging Node.js
+Plugin 'sidorares/node-vim-debugger'
 
 " Node.js plugin
 Plugin 'moll/vim-node'
