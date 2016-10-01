@@ -18,6 +18,8 @@ Plugin 'scrooloose/nerdtree'
 " JavaScript stuff
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
+" JSON
+Plugin 'elzr/vim-json'
 " Web development
 Plugin 'mattn/emmet-vim'
 " auto close (X)HTML tags
@@ -178,6 +180,8 @@ let g:javascript_conceal_super          = "Ω"
 let g:javascript_conceal_arrow_function = "⇒"
 "let g:javascript_conceal_arrow_function = ">"
 
+" JSON
+let g:vim_json_syntax_conceal = 0
 
 " HTML
 let g:user_emmet_mode='a'   " enable all function in all mode.
