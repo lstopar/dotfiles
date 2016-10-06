@@ -15,6 +15,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'whatyouhide/vim-gotham'
 " file explorer
 Plugin 'scrooloose/nerdtree'
+" fuzzy file finder, mapped to CTRL-p
+Plugin 'ctrlpvim/ctrlp.vim'
 " JavaScript stuff
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
@@ -24,6 +26,8 @@ Plugin 'elzr/vim-json'
 Plugin 'mattn/emmet-vim'
 " auto close (X)HTML tags
 Plugin 'alvan/vim-closetag'
+Plugin 'ap/vim-css-color', { 'for': ['css','stylus','scss']  } " set the background of hex color values to the color
+Plugin 'hail2u/vim-css3-syntax', { 'for': 'css'  } " CSS3 syntax support
 " auto close brackets, quotes, ...
 Plugin 'jiangmiao/auto-pairs'
 " auto completion
@@ -48,7 +52,7 @@ Plugin 'tpope/vim-commentary'
 
 " fancy status line
 Plugin 'vim-airline/vim-airline'
-" show the current Git branch in the status bar
+" amazing git wrapper for vim
 Plugin 'tpope/vim-fugitive'
 
 " NEW PLUGINS, still testing (got from eclipse)
@@ -62,12 +66,38 @@ Plugin 'tpope/vim-surround'
 " jump to matching tags
 Plugin 'tmhedberg/matchit'
 
+" TESTING
+Plugin 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
+Plugin 'benmills/vimux' " tmux integration for vim
+Plugin 'sickill/vim-pasta' " context-aware pasting
+
 call vundle#end()
 filetype plugin indent on
 
 "====================================
+" ABBREVIATIONS
+"====================================
+
+abbr teh the
+abbr fitler filter
+
+"====================================
 " FUNCTIONS
 "====================================
+
+" move to the window in the direction shown, or create a new window
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key,'[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
 
 function! ToPrevLine()
     let l:lineN = line('.')
@@ -100,12 +130,16 @@ endfunction
 
 " UTF-8
 set encoding=utf-8
+set autoread    " auto detect when a file is changed
+
+set ttyfast                 " faster redrawing"
+set nolazyredraw            " don't redraw while executing macros"
+
+" map the leader
+let mapleader = ","
 
 " word under cursor highlighting responsiveness
 set updatetime=500
-
-"set term=xterm
-"let t_Co=256
 
 " set 256 color terminal
 if has('unix')
@@ -113,9 +147,8 @@ if has('unix')
 endif
 
 " color scheme
-colorscheme gotham256
-"colorscheme gotham
-"colorscheme grb256
+"colorscheme gotham256
+colorscheme onedark
 
 " enable syntax highlighting
 syntax on
@@ -126,6 +159,7 @@ set nowrap
 set number
 " highlight the current line
 set cursorline
+set scrolloff=3             " lines of text around cursor"
 " tab settings
 set tabstop=4
 set shiftwidth=4
@@ -160,6 +194,8 @@ set laststatus=2
 " CLIPBOARD
 " copy into system clipboard whenever text is yanked
 set clipboard=unnamedplus
+set pastetoggle=<F2>    " toggle pasting with/without indents
+
 
 " CURSOR
 
@@ -172,7 +208,6 @@ set cole=0
 let g:javascript_conceal_function       = "ƒ"
 let g:javascript_conceal_null           = "ø"
 let g:javascript_conceal_this           = "@"
-" let g:javascript_conceal_return         = "⇚"
 let g:javascript_conceal_return         = "<"
 let g:javascript_conceal_undefined      = "¿"
 let g:javascript_conceal_NaN            = "ℕ"
@@ -180,7 +215,16 @@ let g:javascript_conceal_prototype      = "¶"
 let g:javascript_conceal_static         = "•"
 let g:javascript_conceal_super          = "Ω"
 let g:javascript_conceal_arrow_function = "⇒"
-"let g:javascript_conceal_arrow_function = ">"
+
+" airline options
+" let g:airline_powerline_fonts=1
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
+" let g:airline_theme='onedark'
+" let g:airline#extensions#tabline#enabled = 1 " enable airline tabline
+" let g:airline#extensions#tabline#tab_min_count = 2 " only show tabline if tabs are being used (more than 1 tab open)f
+" let g:airline#extensions#tabline#show_buffers = 1 " do not show open buffers in tabline
+" let g:airline#extensions#tabline#show_splits = 0"
 
 " JSON
 let g:vim_json_syntax_conceal = 0
@@ -219,6 +263,12 @@ autocmd CursorHoldI *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(e
 autocmd CursorHold *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
 autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
+
+" auto resize panes on resize
+"autocmd VimResized * exe 'normal! \<c-w>='
+" save all files on focus lost
+autocmd FocusLost * silent! wa
+
 autocmd vimenter * NERDTree
 
 "=====================================
@@ -239,13 +289,18 @@ inoremap <right> <c-r>=ToNextLine()<return>
 inoremap <C-e> <esc>A
 inoremap <C-a> <esc>I
 
-"inoremap <esc> <esc>l
-
+" scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
 " yank from the cursor to the end of the line
 nnoremap Y y$
 " Search mappings: center the line where the match is found
 nnoremap n nzzzv
 nnoremap N Nzzzv
+" clear highlighted search
+noremap <space> :set hlsearch! hlsearch?<cr>
+" search for word under the cursor
+nnoremap <leader>/ "fyiw :/<c-r>f<cr>"
 
 nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>
@@ -254,10 +309,18 @@ nmap <CR> o<Esc>
 nnoremap q: :q
 
 " Better split switching
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+"map <C-j> <C-W>j
+"map <C-k> <C-W>k
+"map <C-h> <C-W>h
+"map <C-l> <C-W>l
+map <silent> <C-h> :call WinMove('h')<cr>
+map <silent> <C-j> :call WinMove('j')<cr>
+map <silent> <C-k> :call WinMove('k')<cr>
+map <silent> <C-l> :call WinMove('l')<cr>
+
+" enable . in visual mode
+vnoremap . :normal .<cr>
+
 
 " map F7, F8 to next, previous tab
 map <F7> :tabp<return>
