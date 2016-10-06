@@ -271,6 +271,8 @@ autocmd FocusLost * silent! wa
 
 autocmd vimenter * NERDTree
 
+" TODO make entering insert mode go to correct indentation (cc)
+
 "=====================================
 " KEY MAPPINGS
 "=====================================
@@ -300,7 +302,7 @@ nnoremap N Nzzzv
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>
 " search for word under the cursor
-nnoremap <leader>/ "fyiw :/<c-r>f<cr>"
+nnoremap <leader>/ "fyiw /<c-r>f<cr>"
 
 nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>
@@ -309,10 +311,6 @@ nmap <CR> o<Esc>
 nnoremap q: :q
 
 " Better split switching
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
 map <silent> <C-h> :call WinMove('h')<cr>
 map <silent> <C-j> :call WinMove('j')<cr>
 map <silent> <C-k> :call WinMove('k')<cr>
