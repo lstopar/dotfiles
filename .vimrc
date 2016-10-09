@@ -331,4 +331,4 @@ nnoremap <leader>/ "fyiw /<c-r>f<cr>"
 " remove trailing white spaces
 nnoremap <leader>fs :%s/\s\+$//e<cr>
 " remove mixed indentation
-nnoremap <leader>fi gg=G
+nnoremap <leader>ft gg=G
