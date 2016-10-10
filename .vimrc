@@ -302,8 +302,6 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>
-" search for word under the cursor
-nnoremap <leader>/ "fyiw /<c-r>f<cr>"
 
 nmap <S-Enter> O<Esc>j
 nmap <CR> o<Esc>
@@ -324,3 +322,14 @@ vnoremap . :normal .<cr>
 " map F7, F8 to next, previous tab
 map <F7> :tabp<return>
 map <F8> :tabn<return>
+
+"=====================================
+" CUSTOM COMMANDS
+"=====================================
+
+" search for word under the cursor
+nnoremap <leader>/ "fyiw /<c-r>f<cr>"
+" remove trailing white spaces
+nnoremap <leader>fs :%s/\s\+$//e<cr>
+" remove mixed indentation
+nnoremap <leader>ft gg=G
