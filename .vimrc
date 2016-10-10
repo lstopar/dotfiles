@@ -36,6 +36,9 @@ Plugin 'rdnetto/YCM-Generator'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
+" code checking
+Plugin 'scrooloose/syntastic'
+
 " debugging C++ (TODO still working on it)
 Plugin 'vim-scripts/Conque-GDB'
 " debugging Node.js
@@ -238,10 +241,20 @@ let g:ycm_auto_trigger = 0                                  " only trigger autoc
 let g:ycm_add_preview_to_completeopt = 0                    " use the preview window for additional info"
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1      " auto close the preview window after completion has been accepted"
-
 " Vims preview default
 " set completeopt=preview,menuone
 set completeopt=menuone
+
+" synthax checking
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_js_checkers = ['jshint']
 
 " expanding selection region
 vmap v <Plug>(expand_region_expand)
@@ -332,4 +345,4 @@ nnoremap <leader>/ "fyiw /<c-r>f<cr>"
 " remove trailing white spaces
 nnoremap <leader>fs :%s/\s\+$//e<cr>
 " remove mixed indentation
-nnoremap <leader>ft gg=G
+nnoremap <leader>ft gg=G''
