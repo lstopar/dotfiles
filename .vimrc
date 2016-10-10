@@ -249,6 +249,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 " commenting sections of code using CTRL+/
 vmap <C-_> gc
+"nnoremap <C-_> gc
 
 " Vim airline
 "let g:airline_section_b = '%{strftime("%c")}'
