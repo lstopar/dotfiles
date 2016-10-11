@@ -1,0 +1,6 @@
+
+{
+    "extends": "/home/jrupnik/.jshintrc",
+    "jquery": true
+}
+
