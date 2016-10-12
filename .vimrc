@@ -20,6 +20,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " JavaScript stuff
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
+" better synthax highlighting
+Plugin 'sheerun/vim-polyglot'
 " JSON
 Plugin 'elzr/vim-json'
 " Web development
@@ -68,6 +70,9 @@ Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'tpope/vim-surround'
 " jump to matching tags
 Plugin 'tmhedberg/matchit'
+
+" LaTeX plugin
+"Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
 
 " eclipse-like task list
 "Plugin 'vim-scripts/TaskList.vim'
@@ -135,6 +140,9 @@ endfunction
 " CONFIGURATION
 "====================================
 
+" read .vimrc in the current directory
+set exrc
+
 " UTF-8
 set encoding=utf-8
 set autoread    " auto detect when a file is changed
@@ -154,7 +162,6 @@ if has('unix')
 endif
 
 " color scheme
-"colorscheme gotham256
 colorscheme onedark
 
 " enable syntax highlighting
