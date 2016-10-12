@@ -58,9 +58,9 @@ Plugin 'vim-airline/vim-airline'
 " amazing git wrapper for vim
 Plugin 'tpope/vim-fugitive'
 
-" NEW PLUGINS, still testing (got from eclipse)
 " improve paragraph detection
 Plugin 'justinmk/vim-ipmotion'
+Plugin 'sickill/vim-pasta' " context-aware pasting
 
 " function argument handling
 Plugin 'vim-scripts/argtextobj.vim'
@@ -69,10 +69,13 @@ Plugin 'tpope/vim-surround'
 " jump to matching tags
 Plugin 'tmhedberg/matchit'
 
+" eclipse-like task list
+"Plugin 'vim-scripts/TaskList.vim'
+
 " TESTING
 Plugin 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
 Plugin 'benmills/vimux' " tmux integration for vim
-Plugin 'sickill/vim-pasta' " context-aware pasting
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 filetype plugin indent on
@@ -82,6 +85,7 @@ filetype plugin indent on
 "====================================
 
 abbr teh the
+abbr hte the
 abbr fitler filter
 
 "====================================
