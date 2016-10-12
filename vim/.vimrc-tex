@@ -1,0 +1,25 @@
+"====================================
+" PLUGINS
+"====================================
+
+so ~/.vim/config/plugin-init.vim
+so ~/.vim/config/plugins.vim
+" LaTeX plugin
+Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+" jump to matching tags in HTML, LaTeX
+Plugin 'tmhedberg/matchit'
+
+so ~/.vim/config/plugin-end.vim
+
+"====================================
+" CONFIGURATION
+"====================================
+
+so ~/.vim/config/functions.vim
+so ~/.vim/config/config.vim
+
+" jump forward when inserting text into snippet
+" using CTRL-*
+imap <C-*> <Plug>IMAP_JumpForward
+nmap <C-*> <Plug>IMAP_JumpForward
+vmap <C-*> <Plug>IMAP_JumpForward
