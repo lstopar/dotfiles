@@ -141,7 +141,7 @@ endfunction
 "====================================
 
 " read .vimrc in the current directory
-set exrc
+"set exrc
 
 " UTF-8
 set encoding=utf-8
