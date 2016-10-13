@@ -6,10 +6,82 @@ so ~/.vim/config/plugin-init.vim
 so ~/.vim/config/plugins.vim
 " LaTeX plugin
 Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+" live preview for LaTeX
+Plugin 'xuhdev/vim-latex-live-preview'
 " jump to matching tags in HTML, LaTeX
 Plugin 'tmhedberg/matchit'
 
 so ~/.vim/config/plugin-end.vim
+
+" Function Tex_CalcIndent:   to be used as indentexpr {{{
+" This function can be used as indentexpr.
+function! Tex_CalcIdent()
+	" Check whether we can use the cache
+	let can_use_cache = s:CanUseCache()
+	call s:SetCache()
+
+	if !can_use_cache
+		call s:AssemblePatterns()
+	endif
+
+	" Current line number
+	let clnum = v:lnum
+
+	" Code for comment: If current line is a comment, do not alter the
+	" indentation
+	let cline = getline(clnum) " Content of current line
+	if cline =~ '^\s*%'
+		return indent(clnum)
+	endif
+
+	" Strip comments
+	let cline = substitute(cline, '\\\@<!\(\\\\\)*\zs%.*', '', '')
+	" Strip leading whitespace
+	let cline = substitute(cline, '^\s*', '', '')
+
+	" Find a non-blank line above the current line, which is more than a comment.
+	let plnum = prevnonblank(clnum - 1)
+	while plnum != 0
+		if getline(plnum) !~ '^\s*%'
+			break
+		endif
+		let plnum = prevnonblank(plnum - 1)
+	endwhile
+
+	" At the start of the file use zero indent.
+	if plnum == 0
+		return 0
+	endif
+
+	" Current indentation of previous line
+	let pind = indent(plnum)
+	" Content of previous line
+	let pline = getline(plnum)
+	" Strip comments
+	let pline = substitute(pline, '\\\@<!\(\\\\\)*\zs%.*', '', '')
+	" Strip leading whitespace
+	let pline = substitute(pline, '^\s*', '', '')
+
+	" Compute the deepest indentation on the current line
+	let cindent = s:DeepestNesting( cline )
+
+	" Compute the offset to the deepest indentation from the previous line
+	if can_use_cache && s:cache_lnum == plnum && s:cache_line ==# pline
+		let pindent = s:cache_indent
+	else
+		let pindent = s:DeepestNesting( pline )
+	endif
+
+	" Cache the result of the current line
+	let s:cache_lnum   = clnum
+	let s:cache_indent = cindent
+	let s:cache_line   = cline
+
+	" Add one shiftwidth per indentation level
+	let ind = pind + &shiftwidth * ( cindent[0] + pindent[1] )
+
+	return ind
+endfunction
 
 "====================================
 " CONFIGURATION
@@ -18,8 +90,32 @@ so ~/.vim/config/plugin-end.vim
 so ~/.vim/config/functions.vim
 so ~/.vim/config/config.vim
 
+" configuration
+set wrap
+" better line breaking
+set linebreak
+
+" indent
+set autoindent
+set nosmartindent
+set indentexpr=Tex_CalcIdent()
+set indentkeys+=},],.,)
+
+" let g:tex_flavor='latex'
+
+" " viewers
+" let g:Tex_ViewRule_dvi='xdvi'
+" let g:Tex_ViewRule_ps='ghostview'
+" let g:Tex_ViewRule_dvi='xpdf'
+
+" " preview
+" let g:livepreview_previewer = 'xdvi'
+
 " jump forward when inserting text into snippet
-" using CTRL-*
-imap <C-*> <Plug>IMAP_JumpForward
-nmap <C-*> <Plug>IMAP_JumpForward
-vmap <C-*> <Plug>IMAP_JumpForward
+" using CTRL-f
+imap <C-f> <Plug>IMAP_JumpForward
+nmap <C-f> <Plug>IMAP_JumpForward
+vmap <C-f> <Plug>IMAP_JumpForward
+
+"nnoremap <F4> <Leader>ls
+nnoremap <leader>p :LLPStartPreview<cr>

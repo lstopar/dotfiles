@@ -140,7 +140,6 @@ map <silent> <C-l> :call WinMove('l')<cr>
 " enable . in visual mode
 vnoremap . :normal .<cr>
 
-
 " map F7, F8 to next, previous tab
 map <F7> :tabp<return>
 map <F8> :tabn<return>
