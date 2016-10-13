@@ -4,6 +4,9 @@
 
 abbr teh the
 abbr hte the
+
+abbr nwe new
+
 abbr fitler filter
 
 "====================================
