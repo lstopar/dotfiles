@@ -27,6 +27,7 @@ ln -s `pwd`/sections/plugin-end.vim ~/.vim/config/plugin-end.vim
 ln -s `pwd`/sections/plugin-init.vim ~/.vim/config/plugin-init.vim
 ln -s `pwd`/sections/plugins.vim ~/.vim/config/plugins.vim
 ln -s `pwd`/sections/plugins-web.vim ~/.vim/config/plugins-web.vim
+ln -s `pwd`/sections/plugins-programming.vim ~/.vim/config/plugins-programming.vim
 ln -s `pwd`/.vimrc ~/.vimrc
 #ln -s `pwd`/javascript.vim ~/.vim/ftplugin/javascript.vim
 #ln -s `pwd`/html.vim ~/.vim/ftplugin/html.vim

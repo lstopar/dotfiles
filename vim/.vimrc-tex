@@ -94,6 +94,11 @@ so ~/.vim/config/config.vim
 set wrap
 " better line breaking
 set linebreak
+" for suggestions
+set iskeyword+=:
+" how much do you want to fold your files
+set foldlevel=99
+set foldlevelstart=99
 
 " indent
 set autoindent
@@ -113,6 +118,8 @@ set indentkeys+=},],.,)
 
 " jump forward when inserting text into snippet
 " using CTRL-f
+inoremap <C-S> <C-n>
+
 imap <C-f> <Plug>IMAP_JumpForward
 nmap <C-f> <Plug>IMAP_JumpForward
 vmap <C-f> <Plug>IMAP_JumpForward
