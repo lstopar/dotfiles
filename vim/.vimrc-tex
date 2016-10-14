@@ -106,7 +106,7 @@ set nosmartindent
 set indentexpr=Tex_CalcIdent()
 set indentkeys+=},],.,)
 
-" let g:tex_flavor='latex'
+let g:tex_flavor='latex'
 
 " " viewers
 " let g:Tex_ViewRule_dvi='xdvi'
