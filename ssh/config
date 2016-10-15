@@ -12,3 +12,9 @@ Host legoberry
 HostName legoberry.home
 User pi
 Port 22
+
+Host ffa
+HostName raziskave.ffa.uni-lj.si
+User root
+Port 22
+
