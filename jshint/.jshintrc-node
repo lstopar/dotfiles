@@ -1,0 +1,4 @@
+{
+    "extends": "/home/jrupnik/.jshintrc",
+    "node": true
+}
