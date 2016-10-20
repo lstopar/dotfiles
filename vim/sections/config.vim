@@ -83,6 +83,11 @@ set laststatus=2
 set clipboard=unnamedplus
 set pastetoggle=<F2>    " toggle pasting with/without indents
 
+" set the backup, swap and undo files directories
+set undodir=~/.vim/.undo//
+set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swp//
+
 highlight WordUnderCursor ctermbg=DarkGray guibg=green
 
 autocmd CursorHoldI *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))

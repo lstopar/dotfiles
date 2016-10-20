@@ -19,6 +19,9 @@ if [ -f "$HOME/.vimrc" ]; then
 fi
 
 mkdir -p ~/.vim/config
+mkdir -p ~/.vim/.backup
+mkdir -p ~/.vim/.swp
+mkdir -p ~/.vim/.undo
 
 echo 'Linking .vimrc ...'
 ln -s `pwd`/sections/config.vim ~/.vim/config/config.vim
