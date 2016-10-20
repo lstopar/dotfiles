@@ -1,0 +1,4 @@
+# root
+PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;204m\]\u@\h \[\e[38;5;145m\]\W \[\e[38;5;204m\]#\[\e[00m\] '
+# normal user
+PS1='${debian_chroot:+($debian_chroot)}\[\e[38;5;39m\]\u@\h \[\e[38;5;145m\]\W \[\e[38;5;39m\]$\[\e[00m\] '

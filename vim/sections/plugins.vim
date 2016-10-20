@@ -42,6 +42,9 @@ Plugin 'terryma/vim-multiple-cursors'
 " surround
 let g:surround_no_insert_mappings = 1
 
+" auto pairs
+let g:AutoPairsCenterLine = 0
+
 " expanding selection region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
