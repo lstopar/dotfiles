@@ -7,6 +7,8 @@ abbr hte the
 
 abbr nwe new
 
+abbr reutrn return
+
 abbr fitler filter
 
 "====================================
