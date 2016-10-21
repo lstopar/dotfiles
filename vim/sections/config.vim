@@ -9,6 +9,7 @@ abbr nwe new
 
 abbr reutrn return
 abbr retunr return
+abbr reutnr return
 
 abbr fucntion function
 
