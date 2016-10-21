@@ -7,3 +7,4 @@ PROFILE_NAME=Default
 
 gconftool-2 --set "/apps/gnome-terminal/profiles/$PROFILE_NAME/foreground_color" --type string "$TERM_FONT_COLOR"
 gconftool-2 --set "/apps/gnome-terminal/profiles/$PROFILE_NAME/background_color" --type string "$TERM_BACKGROUND_COLOR"
+gconftool-2 --set "/apps/gnome-terminal/profiles/$PROFILE_NAME/background_type" --type string solid
