@@ -9,6 +9,8 @@ abbr nwe new
 
 abbr reutrn return
 
+abbr fucntion function
+
 abbr fitler filter
 
 "====================================
@@ -158,6 +160,8 @@ map <F8> :tabn<return>
 " CUSTOM COMMANDS
 "=====================================
 
+" fast save
+nnoremap <leader>s :update<cr>
 " search for word under the cursor
 nnoremap <leader>/ "fyiw /<c-r>f<cr>"
 " remove trailing white spaces
