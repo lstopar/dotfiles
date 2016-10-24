@@ -167,7 +167,7 @@ map <F8> :tabn<return>
 " f - fix
 
 " fast save
-nnoremap <leader>s :update<cr>
+"nnoremap <leader>s :update<cr>
 " search for word under the cursor
 nnoremap <leader>/ "fyiw /<c-r>f<cr>"
 " remove trailing white spaces
