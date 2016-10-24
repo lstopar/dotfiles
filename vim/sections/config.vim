@@ -6,6 +6,7 @@ abbr teh the
 abbr hte the
 
 abbr nwe new
+abbr enw new
 
 abbr reutrn return
 abbr retunr return
