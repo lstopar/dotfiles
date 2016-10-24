@@ -66,9 +66,12 @@ export LS_COLORS='di='$COLOR_DIR':ln='$COLOR_LINK':or='$COLOR_ORPHAN':mi='$COLOR
 # GREP COLORS
 #=======================================
 
+COLOR_FILE=$COLOR_PURPLE
+COLOR_LINE=$COLOR_GREEN
+COLOR_BYTE_OFFSET=$COLOR_BLUE
 COLOR_MATCH=$COLOR_RED';'$EFFECT_BOLD
 
-export GREP_COLORS='mt='$COLOR_MATCH
+export GREP_COLORS='mt='$COLOR_MATCH':fn='$COLOR_FILE':ln='$COLOR_LINE':bn='$COLOR_TYPE_OFFSET
 
 #=======================================
 # PS1
