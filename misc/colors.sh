@@ -42,6 +42,10 @@ EFFECT_BOLD=1
 # ec	ENDCODE, END	Non-filename text
 # *.extension	 	Every file using this # extension e.g. *.jpg
 
+#=======================================
+# LS COLORS
+#=======================================
+
 # directories
 COLOR_DIR=$COLOR_BLUE';'$EFFECT_BOLD
 COLOR_OTHER_WRITABLE=$COLOR_GREEN';'$EFFECT_BOLD
@@ -58,6 +62,17 @@ COLOR_BLOCK_DEVICE=$COLOR_YELLOW
 
 export LS_COLORS='di='$COLOR_DIR':ln='$COLOR_LINK':or='$COLOR_ORPHAN':mi='$COLOR_MISSING':ex='$COLOR_EXECUTABLE':ow='$COLOR_OTHER_WRITABLE':cd='$COLOR_CHAR_DEVICE':bd='$COLOR_BLOCK_DEVICE':so='$COLOR_SOCKET
 
+#=======================================
+# GREP COLORS
+#=======================================
+
+COLOR_MATCH=$COLOR_RED';'$EFFECT_BOLD
+
+export GREP_COLORS='mt='$COLOR_MATCH
+
+#=======================================
+# PS1
+#=======================================
 
 if [[ ${EUID} == 0 ]] ; then
     PS1='${debian_chroot:+($debian_chroot)}\[\e['$COLOR_RED'm\]\u@\h \[\e['$COLOR_WHITE'm\]\W \[\e['$COLOR_RED'm\]$\[\e[00m\] '
