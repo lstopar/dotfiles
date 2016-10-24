@@ -106,8 +106,6 @@ autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
 " save all files on focus lost
 autocmd FocusLost * silent! wa
 
-autocmd vimenter * NERDTree
-
 " TODO make entering insert mode go to correct indentation (cc)
 
 "=====================================
@@ -162,6 +160,12 @@ map <F8> :tabn<return>
 " CUSTOM COMMANDS
 "=====================================
 
+" LEADER COMMANDS:
+" o - open
+" c - close
+" t - toggle
+" f - fix
+
 " fast save
 nnoremap <leader>s :update<cr>
 " search for word under the cursor
@@ -170,3 +174,7 @@ nnoremap <leader>/ "fyiw /<c-r>f<cr>"
 nnoremap <leader>fs :%s/\s\+$//e<cr>
 " remove mixed indentation
 nnoremap <leader>ft gg=G''
+" open/close the file tree
+nnoremap <leader>ot :NERDTree<cr>
+nnoremap <leader>ct :NERDTreeClose<cr>
+nnoremap <leader>tt :NERDTreeToggle<cr>

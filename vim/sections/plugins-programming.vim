@@ -41,3 +41,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"  " TODO
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+"=====================================
+" INITIALIZATION
+"=====================================
+
+autocmd vimenter * NERDTree
