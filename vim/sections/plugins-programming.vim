@@ -47,3 +47,10 @@ let g:UltiSnipsEditSplit="vertical"
 "=====================================
 
 autocmd vimenter * NERDTree
+
+"=====================================
+" KEY MAPPINGS
+"=====================================
+
+" open syntastic error list
+nnoremap <leader>oe :lopen<cr>
