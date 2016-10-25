@@ -52,5 +52,6 @@ autocmd vimenter * NERDTree
 " KEY MAPPINGS
 "=====================================
 
-" open syntastic error list
+" open/close syntastic error list
 nnoremap <leader>oe :lopen<cr>
+nnoremap <leader>ce :lclose<cr>
