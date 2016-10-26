@@ -138,8 +138,8 @@ inoremap <C-a> <esc>I
 
 " autocomplete
 " autocomplete using tags when pressing Ctrl-Space
-" inoremap <C-space> <C-x><C-n>
-" inoremap <C-@> <C-Space>
+inoremap <C-space> <C-x><C-]>
+inoremap <C-@> <C-x><C-]>
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
