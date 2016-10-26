@@ -116,7 +116,7 @@ autocmd FocusLost * silent! wa
 " - use ^t to jump up the tag stack
 
 command! MakeTags !ctags -R .
-nnoremap <C-[> <C-t>
+"nnoremap <C-[> <C-t>
 
 "=====================================
 " KEY MAPPINGS
