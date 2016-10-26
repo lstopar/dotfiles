@@ -136,6 +136,11 @@ inoremap <right> <c-r>=ToNextLine()<return>
 inoremap <C-e> <esc>A
 inoremap <C-a> <esc>I
 
+" autocomplete
+" autocomplete using tags when pressing Ctrl-Space
+" inoremap <C-space> <C-x><C-n>
+" inoremap <C-@> <C-Space>
+
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
