@@ -107,7 +107,15 @@ autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
 " save all files on focus lost
 autocmd FocusLost * silent! wa
 
-" TODO make entering insert mode go to correct indentation (cc)
+"=====================================
+" JUMPING TAGS
+"=====================================
+
+" - use ^] to jump to tag under corsor
+" - use g^] for ambiguous tags
+" - use ^t to jump up the tag stack
+
+command! MakeTags !ctags -R .
 
 "=====================================
 " KEY MAPPINGS
