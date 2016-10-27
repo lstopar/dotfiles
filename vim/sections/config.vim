@@ -51,6 +51,9 @@ syntax on
 set nowrap
 " line numbers
 set number
+" show line numbers relative to the current line
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
 " highlight the current line
 set cursorline
 set scrolloff=3             " lines of text around cursor"
