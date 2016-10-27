@@ -11,6 +11,9 @@ Plugin 'honza/vim-snippets'
 " function argument handling
 Plugin 'vim-scripts/argtextobj.vim'
 
+" auto generate tags
+Plugin 'szw/vim-tags'
+
 " YouCompleteMe
 " let g:ycm_disable_startup_warning = 1
 " let g:ycm_auto_trigger = 0                                  " only trigger autocomplete using <ctrl-space> (no automatic triggering)"
