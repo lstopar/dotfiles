@@ -115,7 +115,7 @@ autocmd FocusLost * silent! wa
 " - use g^] for ambiguous tags
 " - use ^t to jump up the tag stack
 
-command! MakeTags !ctags -R .
+"command! MakeTags !ctags -R .
 "nnoremap <C-[> <C-t>
 
 "=====================================
