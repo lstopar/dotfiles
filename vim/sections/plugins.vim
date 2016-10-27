@@ -13,25 +13,45 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 " fuzzy file finder, mapped to CTRL-p
 Plugin 'ctrlpvim/ctrlp.vim'
+" amazing git wrapper for vim
+Plugin 'tpope/vim-fugitive'
 " better synthax highlighting
 Plugin 'sheerun/vim-polyglot'
 " auto close brackets, quotes, ...
 Plugin 'jiangmiao/auto-pairs'
 " expanding selected regions
 Plugin 'terryma/vim-expand-region'
-" comment out sections of code
-Plugin 'tpope/vim-commentary'
-" amazing git wrapper for vim
-Plugin 'tpope/vim-fugitive'
+" enables repeating other supported plugins with the . command
+Plugin 'tpope/vim-repeat'
 " improve paragraph detection
 Plugin 'justinmk/vim-ipmotion'
 " context-aware pasting
 Plugin 'sickill/vim-pasta'
-" change surrounding tags, parentheses, brackets, ...
+
+" OPERATIONS ON TEXT OBJECTS
+" comment out sections of code using gc
+Plugin 'tpope/vim-commentary'
+" replace with register using gr (avoids overriding the register)
+Plugin 'vim-scripts/ReplaceWithRegister'
+" change surrounding tags, parentheses, brackets, ... using cs'", ds' (ysiw"
+" to add quotes around a word)
 Plugin 'tpope/vim-surround'
+" titlecase text objects using gt
+Plugin 'christoomey/vim-titlecase'
+" sort lines, comma separated words (args), ... using gs (gsip, gs10j, gsi(  )
+Plugin 'christoomey/vim-sort-motion'
+" copy text objects into system clipboard using cp
+Plugin 'christoomey/vim-system-copy'
+
+" TEXT OBJECTS
+" inner-line text object, inner line represented by _ (d_, c_)
+Plugin 'bruno-/vim-line'
+" lines with same indent, represented by i
+Plugin 'michaeljsmith/vim-indent-object'
+" comment, represented by c
+Plugin 'glts/vim-textobj-comment'
 
 " TESTING
-Plugin 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
 Plugin 'benmills/vimux' " tmux integration for vim
 Plugin 'terryma/vim-multiple-cursors'
 

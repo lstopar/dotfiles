@@ -89,8 +89,9 @@ set laststatus=2
 
 " CLIPBOARD
 " copy into system clipboard whenever text is yanked
-set clipboard=unnamedplus
-set pastetoggle=<F2>    " toggle pasting with/without indents
+" set clipboard=unnamedplus
+" toggle pasting with/without indents
+set pastetoggle=<F2>
 
 " set the backup, swap and undo files directories
 set undodir=~/.vim/.undo//
