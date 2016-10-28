@@ -12,7 +12,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/argtextobj.vim'
 
 " auto generate tags
-Plugin 'szw/vim-tags'
+" Plugin 'szw/vim-tags'
 
 " YouCompleteMe
 " let g:ycm_disable_startup_warning = 1
