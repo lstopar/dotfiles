@@ -13,6 +13,10 @@ Plugin 'vim-scripts/argtextobj.vim'
 
 " auto generate tags
 Plugin 'szw/vim-tags'
+" function text object using f (dif, caf, ...)
+Plugin 'kana/vim-textobj-function'
+" functions for javascript
+Plugin 'thinca/vim-textobj-function-javascript'
 
 " YouCompleteMe
 " let g:ycm_disable_startup_warning = 1

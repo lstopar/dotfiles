@@ -44,6 +44,8 @@ Plugin 'christoomey/vim-sort-motion'
 Plugin 'christoomey/vim-system-copy'
 
 " TEXT OBJECTS
+" plugin to create your own text objects
+Plugin 'kana/vim-textobj-user'
 " inner-line text object, inner line represented by _ (d_, c_)
 Plugin 'bruno-/vim-line'
 " lines with same indent, represented by i
