@@ -12,6 +12,8 @@ abbr reutrn return
 abbr retunr return
 abbr reutnr return
 
+abbr esle else
+
 abbr fucntion function
 
 abbr fitler filter
