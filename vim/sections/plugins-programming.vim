@@ -12,7 +12,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-scripts/argtextobj.vim'
 
 " auto generate tags
-Plugin 'szw/vim-tags'
+" Plugin 'szw/vim-tags'
 " function text object using f (dif, caf, ...)
 Plugin 'kana/vim-textobj-function'
 " functions for javascript
