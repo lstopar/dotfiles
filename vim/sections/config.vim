@@ -59,10 +59,10 @@ set relativenumber
 set cursorline
 " lines of text around cursor"
 set scrolloff=3
-" the miber of columns to scroll sideways when the cursor leaves the screen
+" the number of columns to scroll sideways when the cursor leaves the screen
 set sidescroll=3
 " columns around the cursor
-set sidescrolloff=3
+set sidescrolloff=5
 " tab settings
 set tabstop=4
 set shiftwidth=4
