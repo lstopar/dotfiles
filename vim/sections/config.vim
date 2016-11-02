@@ -57,7 +57,12 @@ set number
 set relativenumber
 " highlight the current line
 set cursorline
-set scrolloff=3             " lines of text around cursor"
+" lines of text around cursor"
+set scrolloff=3
+" the miber of columns to scroll sideways when the cursor leaves the screen
+set sidescroll=3
+" columns around the cursor
+set sidescrolloff=3
 " tab settings
 set tabstop=4
 set shiftwidth=4
@@ -67,6 +72,8 @@ set incsearch                   " Shows the match while typing"
 set hlsearch                    " Highlight found searches"
 set ignorecase                  " Search case insensitive...
 set smartcase                   " ... but not when search pattern contains upper case characters
+" turn on spell checking
+"set spell
 
 " make backspace work like in other editors while in insert mode
 set backspace=indent,eol,start
