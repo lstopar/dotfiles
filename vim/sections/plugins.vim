@@ -41,7 +41,7 @@ Plugin 'christoomey/vim-titlecase'
 " sort lines, comma separated words (args), ... using gs (gsip, gs10j, gsi(  )
 Plugin 'christoomey/vim-sort-motion'
 " copy text objects into system clipboard using cp
-Plugin 'christoomey/vim-system-copy'
+"Plugin 'christoomey/vim-system-copy'
 
 " TEXT OBJECTS
 " plugin to create your own text objects

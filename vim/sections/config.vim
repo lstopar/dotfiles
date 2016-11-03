@@ -98,7 +98,7 @@ set laststatus=2
 
 " CLIPBOARD
 " copy into system clipboard whenever text is yanked
-" set clipboard=unnamedplus
+set clipboard=unnamedplus
 " toggle pasting with/without indents
 set pastetoggle=<F2>
 
@@ -133,13 +133,6 @@ command! MakeTags !ctags -R .
 " KEY MAPPINGS
 "=====================================
 
-" tab forward/backward
-nnoremap <S-Tab> <<
-nnoremap <tab> >>
-"inoremap <S-Tab> <C-d>
-vnoremap <tab> >
-vnoremap <S-tab> <lt>
-
 " go to next previous line when pressing left/right
 inoremap <left> <c-r>=ToPrevLine()<return>
 inoremap <right> <c-r>=ToNextLine()<return>
@@ -155,7 +148,8 @@ inoremap <C-@> <C-x><C-]>
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-" yank from the cursor to the end of the line
+" yank from the cursor to the end of the line (to match the behaviour of D and
+" C)
 nnoremap Y y$
 " Search mappings: center the line where the match is found
 nnoremap n nzzzv
@@ -163,7 +157,7 @@ nnoremap N Nzzzv
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>
 
-nmap <S-Enter> O<Esc>j
+nmap <S-CR> O<Esc>j
 nmap <CR> o<Esc>
 
 " ignore annoying Ex mode
