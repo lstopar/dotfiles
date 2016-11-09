@@ -9,6 +9,8 @@ Plugin 'gmarik/vundle'
 Plugin 'flazz/vim-colorschemes'
 " fancy status line
 Plugin 'vim-airline/vim-airline'
+
+" MOVEMENT
 " file explorer
 Plugin 'scrooloose/nerdtree'
 " fuzzy file finder, mapped to CTRL-p

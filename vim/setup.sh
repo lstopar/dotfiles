@@ -35,8 +35,6 @@ ln -s `pwd`/.vimrc ~/.vimrc
 #ln -s `pwd`/javascript.vim ~/.vim/ftplugin/javascript.vim
 #ln -s `pwd`/html.vim ~/.vim/ftplugin/html.vim
 
-mkdir -p ~/.vim
-
 echo 'Creating directory ...'
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
 echo 'Installing plugins ...'

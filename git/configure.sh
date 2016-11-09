@@ -9,3 +9,6 @@ git config --global credentail.helper 'cache --timeout=3600'
 git config --global color.status.added 'green'
 git config --global color.status.changed 'magenta'
 git config --global color.status.untracked 'white'
+
+# trailing whitespaces
+git config --global core.whitespace 'warn'
