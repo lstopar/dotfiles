@@ -137,8 +137,10 @@ command! MakeTags !ctags -R .
 inoremap <left> <c-r>=ToPrevLine()<return>
 inoremap <right> <c-r>=ToNextLine()<return>
 
-inoremap <C-e> <esc>A
-inoremap <C-a> <esc>I
+inoremap <C-e> <end>
+inoremap <C-a> <home>
+" inoremap <C-e> <esc>A
+" inoremap <C-a> <esc>I
 
 " autocomplete
 " autocomplete using tags when pressing Ctrl-Space
