@@ -198,3 +198,8 @@ nnoremap <leader>ft gg=G''
 nnoremap <leader>ot :NERDTree<cr>
 nnoremap <leader>ct :NERDTreeClose<cr>
 nnoremap <leader>tt :NERDTreeToggle<cr>
+
+" Start NERDTree
+autocmd VimEnter * NERDTree
+" Jump to the main window.
+autocmd VimEnter * wincmd p
