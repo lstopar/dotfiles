@@ -120,6 +120,17 @@ autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
 autocmd FocusLost * silent! wa
 
 "=====================================
+" HIGHLIGHT THE CURRENT PANE
+"=====================================
+
+augroup BgHighlight
+    autocmd!
+    " don't highlight the current line on inactive panes
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
+
+"=====================================
 " JUMPING TAGS
 "=====================================
 
