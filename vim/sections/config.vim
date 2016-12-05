@@ -206,7 +206,8 @@ nnoremap <leader>/ "fyiw /<c-r>f<cr>"
 " remove trailing white spaces
 nnoremap <leader>fs :%s/\s\+$//e<cr>
 " remove mixed indentation
-nnoremap <leader>ft gg=G''
+" nnoremap <leader>ft gg=G''
+nnoremap <leader>ft :retab<cr>
 " open/close the file tree
 nnoremap <leader>ot :NERDTree<cr>
 nnoremap <leader>ct :NERDTreeClose<cr>
