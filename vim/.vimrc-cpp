@@ -20,8 +20,10 @@ nnoremap gi :YcmCompleter GoToDefinition<cr>
 nnoremap gh :YcmCompleter GoToDeclaration<cr>
 " do not ask to load YCM configuration
 let g:ycm_confirm_extra_conf = 0
+" show errors/warnings
+let g:ycm_show_diagnostics_ui = 1
 " show errors and warnings
-let g:ycm_enable_diagnostic_signs = 1
+let g:ycm_enable_diagnostic_signs = 0
 " min number of chars to start completion
 let g:ycm_min_num_of_chars_for_completion = 0
 " number of characters that must match for completion
