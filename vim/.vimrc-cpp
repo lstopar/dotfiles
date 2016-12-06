@@ -1,0 +1,31 @@
+so ~/.vim/config/functions.vim
+
+"====================================
+" PLUGINS
+"====================================
+
+so ~/.vim/config/plugin-init.vim
+so ~/.vim/config/plugins.vim
+
+Plugin 'vim-scripts/a.vim'
+" better cpp highlighting
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+" YouCompleteMe for better GOTO functionality
+Plugin 'Valloric/YouCompleteMe'
+" use YCMs GoTo functionality
+nnoremap gd :YcmCompleter GoTo<cr>
+
+" plugin that generates the compile settings for YCM
+Plugin 'rdnetto/YCM-Generator'
+
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_filepath_completion_use_working_dir = 1
+
+so ~/.vim/config/plugin-end.vim
+
+so ~/.vim/config/config.vim
+
+set makeprg=build.sh
+
+nnoremap <F4> :make!<cr>
