@@ -1,7 +1,3 @@
-" auto completion
-"Plugin 'Valloric/YouCompleteMe'
-" generates compiler flags for the project
-" Plugin 'rdnetto/YCM-Generator'
 " code checking
 Plugin 'scrooloose/syntastic'
 " snippets
@@ -11,22 +7,16 @@ Plugin 'honza/vim-snippets'
 " function argument handling
 Plugin 'vim-scripts/argtextobj.vim'
 
-" auto generate tags
-" Plugin 'szw/vim-tags'
 " function text object using f (dif, caf, ...)
 Plugin 'kana/vim-textobj-function'
 " functions for javascript
 Plugin 'thinca/vim-textobj-function-javascript'
 
-" YouCompleteMe
-" let g:ycm_disable_startup_warning = 1
-" let g:ycm_auto_trigger = 0                                  " only trigger autocomplete using <ctrl-space> (no automatic triggering)"
-" let g:ycm_add_preview_to_completeopt = 0                    " use the preview window for additional info"
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1      " auto close the preview window after completion has been accepted"
 " Vims preview default
 " set completeopt=preview,menuone
 set completeopt=menuone
+" put the preview window on the bottom
+set splitbelow
 
 " synthax checking
 set statusline+=%#warningmsg#

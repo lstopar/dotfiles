@@ -6,6 +6,7 @@ so ~/.vim/config/functions.vim
 
 so ~/.vim/config/plugin-init.vim
 so ~/.vim/config/plugins.vim
+so ~/.vim/config/plugins-programming.vim
 
 Plugin 'vim-scripts/a.vim'
 " better cpp highlighting
@@ -35,10 +36,6 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_add_preview_to_completeopt = 0
 " automatically close the upper window after completion
 let g:ycm_autoclose_preview_window_after_completion = 1
-" put the preview window on the bottom
-set splitbelow
-" disable the preview window
-set completeopt-=preview
 
 " plugin that generates the compile settings for YCM
 Plugin 'rdnetto/YCM-Generator'
