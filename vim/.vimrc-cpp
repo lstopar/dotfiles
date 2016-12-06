@@ -15,12 +15,34 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'Valloric/YouCompleteMe'
 " use YCMs GoTo functionality
 nnoremap gd :YcmCompleter GoTo<cr>
+nnoremap gi :YcmCompleter GoToDefinition<cr>
+nnoremap gh :YcmCompleter GoToDeclaration<cr>
+" do not ask to load YCM configuration
+let g:ycm_confirm_extra_conf = 0
+" show errors and warnings
+let g:ycm_enable_diagnostic_signs = 1
+" min number of chars to start completion
+let g:ycm_min_num_of_chars_for_completion = 0
+" number of characters that must match for completion
+let g:ycm_min_num_identifier_candidate_chars = 0
+" trigger autocompletion as you type
+let g:ycm_auto_trigger = 0
+" show autocomplete in comments
+let g:ycm_complete_in_comments = 1
+" show autocomplete in strings
+let g:ycm_complete_in_strings = 1
+" do not use the preview window
+let g:ycm_add_preview_to_completeopt = 0
+" automatically close the upper window after completion
+let g:ycm_autoclose_preview_window_after_completion = 1
+" put the preview window on the bottom
+set splitbelow
+" disable the preview window
+set completeopt-=preview
 
 " plugin that generates the compile settings for YCM
 Plugin 'rdnetto/YCM-Generator'
 
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_filepath_completion_use_working_dir = 1
 
 so ~/.vim/config/plugin-end.vim
 
