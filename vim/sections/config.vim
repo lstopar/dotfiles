@@ -150,13 +150,6 @@ inoremap <right> <c-r>=ToNextLine()<return>
 
 inoremap <C-e> <end>
 inoremap <C-a> <home>
-" inoremap <C-e> <esc>A
-" inoremap <C-a> <esc>I
-
-" autocomplete
-" autocomplete using tags when pressing Ctrl-Space
-inoremap <C-space> <C-x><C-]>
-inoremap <C-@> <C-x><C-]>
 
 " scroll the viewport faster
 nnoremap <C-e> 3<C-e>
@@ -214,6 +207,6 @@ nnoremap <leader>ct :NERDTreeClose<cr>
 nnoremap <leader>tt :NERDTreeToggle<cr>
 
 " Start NERDTree
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 " Jump to the main window.
-autocmd VimEnter * wincmd p
+" autocmd VimEnter * wincmd p
