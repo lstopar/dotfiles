@@ -126,3 +126,6 @@ vmap <C-f> <Plug>IMAP_JumpForward
 
 "nnoremap <F4> <Leader>ls
 nnoremap <leader>p :LLPStartPreview<cr>
+
+" start Vim showing NERDTree
+autocmd vimenter * NERDTree
