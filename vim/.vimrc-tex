@@ -4,10 +4,11 @@
 
 so ~/.vim/config/plugin-init.vim
 so ~/.vim/config/plugins.vim
-" LaTeX plugin
-Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+
 " live preview for LaTeX
 Plugin 'xuhdev/vim-latex-live-preview'
+" LaTeX plugin
+Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
 " jump to matching tags in HTML, LaTeX
 Plugin 'tmhedberg/matchit'
 
@@ -94,11 +95,31 @@ so ~/.vim/config/config.vim
 set wrap
 " better line breaking
 set linebreak
+" automatically indent the broken line to match the original
+set breakindent
+
+" spellchecking
+set spell
+" set spellcheck language
+setlocal spell spelllang=en_us
+" check if the first word in a sentence starts with a capital
+" set spellcapcheck=1
+" no not check comments
+let g:tex_comment_nospell=1
+
+" ignore URLs
+syn match UrlNoSpell '\w\+:\/\/[^[:space:]]\+' contains=@NoSpell
+
 " for suggestions
 set iskeyword+=:
 " how much do you want to fold your files
-set foldlevel=99
-set foldlevelstart=99
+" disable text folding
+let g:Tex_Folding=0
+
+" conceal text
+set conceallevel=1
+" let g:tex_conceal="gmsda"
+" let g:tex_conceal=""
 
 " indent
 set autoindent
@@ -116,9 +137,9 @@ let g:tex_flavor='latex'
 " " preview
 " let g:livepreview_previewer = 'xdvi'
 
+inoremap <C-S> <C-n>
 " jump forward when inserting text into snippet
 " using CTRL-f
-inoremap <C-S> <C-n>
 
 imap <C-f> <Plug>IMAP_JumpForward
 nmap <C-f> <Plug>IMAP_JumpForward
