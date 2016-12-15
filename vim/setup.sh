@@ -31,10 +31,11 @@ ln -s `pwd`/sections/plugin-init.vim ~/.vim/config/plugin-init.vim
 ln -s `pwd`/sections/plugins.vim ~/.vim/config/plugins.vim
 ln -s `pwd`/sections/plugins-web.vim ~/.vim/config/plugins-web.vim
 ln -s `pwd`/sections/plugins-programming.vim ~/.vim/config/plugins-programming.vim
+# link the default .vimrc file
 ln -s `pwd`/.vimrc ~/.vimrc
+# link the folders that are in ~/.vim
 ln -s `pwd`/after ~/.vim/after
-#ln -s `pwd`/javascript.vim ~/.vim/ftplugin/javascript.vim
-#ln -s `pwd`/html.vim ~/.vim/ftplugin/html.vim
+ln -s `pwd`/spell ~/.vim/spell
 
 echo 'Creating directory ...'
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
