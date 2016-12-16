@@ -118,10 +118,10 @@ set directory=~/.vim/.swp//
 
 highlight WordUnderCursor ctermbg=DarkGray guibg=green
 
-autocmd CursorHoldI *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-autocmd CursorHold *.js exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
-autocmd InsertLeave *.js :match WordUnderCursor "as823ryDVBD3323s"
+autocmd CursorHoldI *.js,*.py,*.cpp,*.h,*.java exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd CursorHold *.js,*.py,*.cpp,*.h,*.java exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd InsertLeave *.js,*.py,*.cpp,*.h,*.java :match WordUnderCursor "as823ryDVBD3323s"
+autocmd InsertLeave *.js,*.py,*.cpp,*.h,*.java :match WordUnderCursor "as823ryDVBD3323s"
 
 " auto resize panes on resize
 "autocmd VimResized * exe 'normal! \<c-w>='
