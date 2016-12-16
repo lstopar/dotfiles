@@ -2,20 +2,29 @@
 " ABBREVIATIONS
 "====================================
 
+" the
 abbr teh the
 abbr hte the
 
+" new
 abbr nwe new
 abbr enw new
 
+" return
 abbr reutrn return
 abbr retunr return
 abbr reutnr return
 
+" else
 abbr esle else
 
+" with
+abbr wtih with
+
+" function
 abbr fucntion function
 
+" filter
 abbr fitler filter
 
 "====================================
@@ -197,7 +206,7 @@ map <F8> :tabn<return>
 " search for word under the cursor
 nnoremap <leader>/ "fyiw /<c-r>f<cr>"
 " remove trailing white spaces
-nnoremap <leader>fs :%s/\s\+$//e<cr>
+nnoremap <leader>fs :%s/\s\+$//e<cr>''
 " remove mixed indentation
 " nnoremap <leader>ft gg=G''
 nnoremap <leader>ft :retab<cr>
