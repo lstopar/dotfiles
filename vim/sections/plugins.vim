@@ -5,6 +5,9 @@
 " Vundle plugin manager
 Plugin 'gmarik/vundle'
 
+" enable command aliasing
+" Plugin 'vim-scripts/cmdalias.vim'
+
 " color schemes
 Plugin 'flazz/vim-colorschemes'
 " fancy status line

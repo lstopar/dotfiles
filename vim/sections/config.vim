@@ -10,6 +10,9 @@ abbr hte the
 abbr nwe new
 abbr enw new
 
+" and
+abbr adn and
+
 " return
 abbr reutrn return
 abbr retunr return
@@ -110,6 +113,8 @@ set laststatus=2
 set clipboard=unnamedplus
 " toggle pasting with/without indents
 set pastetoggle=<F2>
+" allow selecting rectangles in text using ctrl-v
+set virtualedit=block
 
 " set the backup, swap and undo files directories
 set undodir=~/.vim/.undo//
@@ -153,10 +158,11 @@ command! MakeTags !ctags -R .
 " KEY MAPPINGS
 "=====================================
 
+
 " go to next previous line when pressing left/right
 inoremap <left> <c-r>=ToPrevLine()<return>
 inoremap <right> <c-r>=ToNextLine()<return>
-
+" jump to end/beginning of line when editing
 inoremap <C-e> <end>
 inoremap <C-a> <home>
 
@@ -172,8 +178,8 @@ nnoremap N Nzzzv
 " clear highlighted search
 noremap <space> :set hlsearch! hlsearch?<cr>
 
-nmap <S-CR> O<Esc>j
-nmap <CR> o<Esc>
+" nmap <S-CR> O<Esc>j
+" nmap <CR> o<Esc>
 
 " ignore annoying Ex mode
 nnoremap q: :q
@@ -192,7 +198,37 @@ map <F7> :tabp<return>
 map <F8> :tabn<return>
 
 "=====================================
-" CUSTOM COMMANDS
+" JUMPING THROUGH CODE
+"=====================================
+
+" quickfix mappings
+" next/previous error
+nnoremap ]q :cnext<cr>
+nnoremap [q :cprev<cr>
+" close the error list
+nmap <leader>oq :copen<cr>
+" open the error list
+nmap <leader>cq :cclose<cr>
+" read the error file
+nmap <leader>lq :cfile<cr>
+" nmap <leader>cq :cclose<cr>`Q:delmarks Q<cr>
+
+command! -nargs=1 Grep mark Q | vimgrep /<args>/gj * | :cwindow
+command! Make mark Q | make! | :cwindow
+
+" vimux
+command! TMake VimuxRunCommand(&makeprg)
+" TODO doesn't work with error list yet!
+" command! TMake VimuxRunCommand(&makeprg . ' 2> errors.err')
+
+" nnoremap :grep :Grep
+" nnoremap :copen<cr> mQ:copen<cr>
+" nnoremap :cclose<cr> :cclose<cr>`Q
+" always open quickfix in new buffer
+" set switchbuf=useopen
+
+"=====================================
+" CUSTOM MAPPINGS
 "=====================================
 
 " LEADER COMMANDS:
@@ -200,6 +236,7 @@ map <F8> :tabn<return>
 " c - close
 " t - toggle
 " f - fix
+" p - preview
 
 " fast save
 "nnoremap <leader>s :update<cr>
@@ -214,8 +251,3 @@ nnoremap <leader>ft :retab<cr>
 nnoremap <leader>ot :NERDTree<cr>
 nnoremap <leader>ct :NERDTreeClose<cr>
 nnoremap <leader>tt :NERDTreeToggle<cr>
-
-" Start NERDTree
-" autocmd VimEnter * NERDTree
-" Jump to the main window.
-" autocmd VimEnter * wincmd p

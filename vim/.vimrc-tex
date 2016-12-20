@@ -5,12 +5,17 @@
 so ~/.vim/config/plugin-init.vim
 so ~/.vim/config/plugins.vim
 
+" Plugin 'xolox/vim-misc'
+" " save panes and buffers when exiting
+" Plugin 'xolox/vim-session'
 " live preview for LaTeX
 Plugin 'xuhdev/vim-latex-live-preview'
 " LaTeX plugin
 Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
 " jump to matching tags in HTML, LaTeX
 Plugin 'tmhedberg/matchit'
+" conceal bold, italic, ...
+Plugin 'tpope/vim-markdown'
 
 so ~/.vim/config/plugin-end.vim
 
