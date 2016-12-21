@@ -2,14 +2,22 @@
 
 echo 'setting up bash ...'
 
-if [ -f ~/.bash_aliases ] || [ -L ~/.bash_aliases ]; then
+if [ -L ~/.bash_aliases ]; then
     echo 'removing old aliases file ...'
     rm ~/.bash_aliases
+elif [ -f ~/.bash_aliases ]; then
+    echo 'backing up old aliases file ...'
+    mkdir -p ~/.backups
+    mv ~/.bash_aliases ~/.backups/.bash_aliases-backup
 fi
 
-if [ -f ~/.bashrc ] || [ -L ~/.bashrc ]; then
+if [ -L ~/.bashrc ]; then
     echo 'removing old aliases file ...'
     rm ~/.bashrc
+elif [ -f ~/.bashrc ]; then
+    echo 'backing up old aliases file ...'
+    mkdir -p ~/.backups
+    mv ~/.bashrc ~/.backups/.bashrc-backup
 fi
 
 ln -s `pwd`/.bash_aliases ~/.bash_aliases
