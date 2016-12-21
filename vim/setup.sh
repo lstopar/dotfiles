@@ -13,7 +13,7 @@ if [ -d "$HOME/.vim" ]; then
     rm -rf $HOME/.vim
 fi
 
-if [ -f "$HOME/.vimrc" ]; then
+if [ -e "$HOME/.vimrc" ] || [ -L "$HOME/.vimrc" ]; then
     echo 'Removing .vimrc ...'
     rm $HOME/.vimrc
 fi
@@ -41,10 +41,3 @@ echo 'Creating directory ...'
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/vundle
 echo 'Installing plugins ...'
 vim -i NONE -c VundleUpdate -c quitall
-
-# npm install -g jshint
-
-# echo 'Configuring YouCompleteMe ...'
-# cd ~/.vim/bundle/YouCompleteMe
-# # ./install.py --clang-completer --tern-completer --system-boost
-# ./install.py --clang-completer --tern-completer
