@@ -38,6 +38,8 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_add_preview_to_completeopt = 0
 " automatically close the upper window after completion
 let g:ycm_autoclose_preview_window_after_completion = 1
+" max file size for completion (50KB)
+let g:ycm_disable_for_files_larger_than_kb = 50000
 
 " plugin that generates the compile settings for YCM
 Plugin 'rdnetto/YCM-Generator'
