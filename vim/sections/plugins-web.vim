@@ -34,5 +34,3 @@ let g:vim_json_syntax_conceal = 0
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
 
 set wildignore+=**/node_modules/**
-set wildignore+=**/*.bin
-set wildignore+=**/*.log

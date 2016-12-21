@@ -38,6 +38,8 @@ abbr fitler filter
 set exrc
 " ignore the tags file when searching for various stuff
 set wildignore+=tags
+set wildignore+=**/*.bin
+set wildignore+=**/*.log
 
 " UTF-8
 set encoding=utf-8
