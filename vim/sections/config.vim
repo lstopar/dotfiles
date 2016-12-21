@@ -40,6 +40,9 @@ set exrc
 set wildignore+=tags
 set wildignore+=**/*.bin
 set wildignore+=**/*.log
+set wildignore+=**/*.out
+set wildignore+=**/*.png
+set wildignore+=**/*.jpg
 
 " UTF-8
 set encoding=utf-8
