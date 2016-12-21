@@ -38,11 +38,18 @@ abbr fitler filter
 set exrc
 " ignore the tags file when searching for various stuff
 set wildignore+=tags
+" common directories
+set wildignore+=**/.git/**
+set wildignore+=**/build/**
+set wildignore+=**/node_modules/**
+set wildignore+=**/nodedoc/**
+" common file types
 set wildignore+=**/*.bin
 set wildignore+=**/*.log
 set wildignore+=**/*.out
 set wildignore+=**/*.png
 set wildignore+=**/*.jpg
+set wildignore+=**/*.md
 " ignore minified files in search
 set wildignore+=**/*.min.js
 

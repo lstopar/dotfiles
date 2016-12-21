@@ -61,6 +61,7 @@ Plugin 'glts/vim-textobj-comment'
 " TESTING
 Plugin 'benmills/vimux' " tmux integration for vim
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mileszs/ack.vim'
 
 "====================================
 " CONFIGURATION
