@@ -237,6 +237,7 @@ command! TMake VimuxRunCommand(&makeprg)
 " t - toggle
 " f - fix
 " p - preview
+" r - refresh
 
 " fast save
 "nnoremap <leader>s :update<cr>
@@ -251,3 +252,5 @@ nnoremap <leader>ft :retab<cr>
 nnoremap <leader>ot :NERDTree<cr>
 nnoremap <leader>ct :NERDTreeClose<cr>
 nnoremap <leader>tt :NERDTreeToggle<cr>
+" refresh all buffers
+nnoremap <leader>ra :checktime<cr>
