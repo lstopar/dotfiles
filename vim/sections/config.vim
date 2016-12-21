@@ -36,6 +36,8 @@ abbr fitler filter
 
 " read .vimrc in the current directory
 set exrc
+" ignore the tags file when searching for various stuff
+set wildignore+=tags
 
 " UTF-8
 set encoding=utf-8

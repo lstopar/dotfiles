@@ -32,3 +32,5 @@ let g:vim_json_syntax_conceal = 0
 
 " HTML
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
+
+set wildignore+=node_modules/**
