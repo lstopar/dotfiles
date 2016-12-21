@@ -213,7 +213,7 @@ nmap <leader>cq :cclose<cr>
 nmap <leader>lq :cfile<cr>
 " nmap <leader>cq :cclose<cr>`Q:delmarks Q<cr>
 
-command! -nargs=+ Grep mark Q | vimgrep /<args>/gj * | :cwindow
+command! -nargs=+ Grep mark Q | vimgrep /<args>/gj **/* | :cwindow
 command! Make mark Q | make! | :cwindow
 
 " vimux
