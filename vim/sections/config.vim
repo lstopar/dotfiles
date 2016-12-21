@@ -43,6 +43,8 @@ set wildignore+=**/*.log
 set wildignore+=**/*.out
 set wildignore+=**/*.png
 set wildignore+=**/*.jpg
+" ignore minified files in search
+set wildignore+=**/*.min.js
 
 " UTF-8
 set encoding=utf-8
