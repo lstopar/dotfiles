@@ -6,7 +6,7 @@ alias tmux="tmux -2"
 alias vi='vim'
 # make ll human readable and show directories first
 alias ls='ls --color=auto'
-alias ll='ls -alLFh --group-directories-first'
+alias ll='ls -alFh --group-directories-first'
 # sort ll by file size
 alias lls='ll -S'
 # sort ll by modification time
