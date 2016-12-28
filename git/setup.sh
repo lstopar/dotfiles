@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # global gitignore file
-ln -s `pwd`/.gitignore-global ~/.gitignore-global
-git config --global core.excludefile ~/.gitignore-global
+ln -s `pwd`/.gitignore-global ~/.gitignore
+git config --global core.excludefile ~/.gitignore
 
 # push only the current branch to the remote branch with the same name
 git config --global push.default current

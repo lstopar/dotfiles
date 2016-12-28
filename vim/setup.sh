@@ -5,6 +5,7 @@
 # sudo apt-get install libboost-all-dev
 # sudo apt-get install clang
 # sudo apt-get install libclang-dev
+# sudo apt-get install cscope
 
 START_DIR=`pwd`
 

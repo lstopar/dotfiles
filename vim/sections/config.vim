@@ -5,6 +5,8 @@
 " the
 abbr teh the
 abbr hte the
+abbr Teh The
+abbr Hte The
 
 " new
 abbr nwe new
@@ -168,7 +170,8 @@ augroup END
 " - use g^] for ambiguous tags
 " - use ^t to jump up the tag stack
 
-command! MakeTags !ctags -R .
+command! -bar MakeCTags !ctags -R .
+command! MakeTags MakeCTags
 
 "=====================================
 " KEY MAPPINGS
@@ -208,6 +211,9 @@ map <silent> <C-l> :call WinMove('l')<cr>
 
 " enable . in visual mode
 vnoremap . :normal .<cr>
+" don't lose selection when shifting sideways
+xnoremap <  <gv
+xnoremap >  >gv
 
 " map F7, F8 to next, previous tab
 map <F7> :tabp<return>
@@ -217,23 +223,34 @@ map <F8> :tabn<return>
 " JUMPING THROUGH CODE
 "=====================================
 
-" quickfix mappings
+" QUICKFIX
 " next/previous error
 nnoremap ]q :cnext<cr>
 nnoremap [q :cprev<cr>
 " close the error list
-nmap <leader>oq :copen<cr>
+nnoremap <leader>oq :copen<cr>
 " open the error list
-nmap <leader>cq :cclose<cr>
+nnoremap <leader>cq :cclose<cr>
 " read the error file
-nmap <leader>lq :cfile<cr>
-" nmap <leader>cq :cclose<cr>`Q:delmarks Q<cr>
+nnoremap <leader>lq :cfile<cr>
 
+" TAGS
+" jump to next matching tag
+nnoremap ]t :tnext<cr>
+" jump to previous matching tag
+nnoremap [t :tprevious<cr>
+" nmap <leader>cq :cclose<cr>`Q:delmarks Q<cr>
+nnoremap <leader>ot :exec("tselect ".expand("<cword>"))<cr>
+nnoremap <leader>pt :exec("ptag ".expand("<cword>"))<cr>
+nnoremap <leader><C-p> :CtrlPTag<cr>
+
+" GREP
 command! -nargs=+ Grep mark Q | vimgrep /<args>/gj **/* | :cwindow
 command! Make mark Q | make! | :cwindow
 
 " vimux
 command! TMake VimuxRunCommand(&makeprg)
+command! Tmake VimuxRunCommand(&makeprg)
 " TODO doesn't work with error list yet!
 " command! TMake VimuxRunCommand(&makeprg . ' 2> errors.err')
 
@@ -259,14 +276,19 @@ command! TMake VimuxRunCommand(&makeprg)
 "nnoremap <leader>s :update<cr>
 " search for word under the cursor
 nnoremap <leader>/ "fyiw /<c-r>f<cr>"
+" FIX - f
 " remove trailing white spaces
 nnoremap <leader>fs :%s/\s\+$//e<cr>''
 " remove mixed indentation
 " nnoremap <leader>ft gg=G''
 nnoremap <leader>ft :retab<cr>
 " open/close the file tree
-nnoremap <leader>ot :NERDTree<cr>
-nnoremap <leader>ct :NERDTreeClose<cr>
-nnoremap <leader>tt :NERDTreeToggle<cr>
+nnoremap <leader>of :NERDTree<cr>
+nnoremap <leader>cf :NERDTreeClose<cr>
+nnoremap <leader>tf :NERDTreeToggle<cr>
 " refresh all buffers
 nnoremap <leader>ra :checktime<cr>
+
+" PREVIEW
+" close the preview window
+nnoremap <leader>cp :pclose<cr>
