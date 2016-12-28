@@ -73,6 +73,12 @@ let g:surround_no_insert_mappings = 1
 " auto pairs
 let g:AutoPairsCenterLine = 0
 
+" let g:ctrlp_open_single_match = 1
+let g:ctrlp_match_window = 'results:100'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_lazy_update = 1
+let g:ctrlp_regexp = 1
+
 " expanding selection region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
