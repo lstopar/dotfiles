@@ -163,17 +163,6 @@ augroup BgHighlight
 augroup END
 
 "=====================================
-" JUMPING TAGS
-"=====================================
-
-" - use ^] to jump to tag under corsor
-" - use g^] for ambiguous tags
-" - use ^t to jump up the tag stack
-
-command! -bar MakeCTags !ctags -R .
-command! MakeTags MakeCTags
-
-"=====================================
 " KEY MAPPINGS
 "=====================================
 
@@ -234,7 +223,17 @@ nnoremap <leader>cq :cclose<cr>
 " read the error file
 nnoremap <leader>lq :cfile<cr>
 
-" TAGS
+"=====================================
+" JUMPING TAGS
+"=====================================
+
+" - use ^] to jump to tag under corsor
+" - use g^] for ambiguous tags
+" - use ^t to jump up the tag stack
+
+command! -bar MakeCTags !ctags -R .
+command! MakeTags MakeCTags
+
 " jump to next matching tag
 nnoremap ]t :tnext<cr>
 " jump to previous matching tag
