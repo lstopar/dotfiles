@@ -19,4 +19,3 @@ popd
 ln -s `pwd`/.zshrc ~/.oh-my-zsh/custom/zshrc.zsh
 ln -s `pwd`/vi-mode.zsh ~/.oh-my-zsh/custom/vi-mode.zsh
 ln -s `pwd`/lstopar.zsh-theme ~/.oh-my-zsh/themes/
-# ln -s `pwd`/the-one-theme/zsh/TheOne.zsh-theme ~/.oh-my-zsh/themes/TheOne.zsh-theme
