@@ -1,28 +1,51 @@
 #!/bin/bash
 
+# set 256 color terminal
+export TERM=xterm-256color
 # extend path with $PWD
-PATH=$PATH:.
+export PATH=$PATH:.
+
+# set color codes
+CODE_RED='204'
+CODE_DARK_RED='196'
+CODE_GREEN='114'
+CODE_YELLOW='180'
+CODE_DARK_YELLOW='173'
+CODE_BLUE='39'
+CODE_BLUE_ALT='75'
+CODE_PURPLE='170'
+CODE_PURPLE_ALT='176'
+CODE_CYAN='38'
+CODE_CYAN_ALT='73'
+CODE_WHITE='145'
+CODE_BLACK='235'
+CODE_COMMENT_GRAY='59'
+CODE_GUTTER_FG_GRAY='238'
+CODE_CURSOR_GRAY='236'
+CODE_VISUAL_GRAY='237'
+CODE_SPECIAL_GRAY='238'
+CODE_VERT_SPLIT='59'
 
 # set colors
-COLOR_RED='38;5;204'
-COLOR_DARK_RED='38;5;196'
-COLOR_GREEN='38;5;114'
-COLOR_YELLOW='38;5;180'
-COLOR_DARK_YELLOW='38;5;173'
-COLOR_BLUE='38;5;39'
-COLOR_BLUE_ALT='38;5;75'
-COLOR_PURPLE='38;5;170'
-COLOR_PURPLE_ALT='38;5;176'
-COLOR_CYAN='38;5;38'
-COLOR_CYAN_ALT='38;5;73'
-COLOR_WHITE='38;5;145'
-COLOR_BLACK='38;5;235'
-COLOR_COMMENT_GRAY='38;5;59'
-COLOR_GUTTER_FG_GRAY='38;5;238'
-COLOR_CURSOR_GRAY='38;5;236'
-COLOR_VISUAL_GRAY='38;5;237'
-COLOR_SPECIAL_GRAY='38;5;238'
-COLOR_VERT_SPLIT='38;5;59'
+COLOR_RED='38;5;'$CODE_RED
+COLOR_DARK_RED='38;5;'$CODE_DARK_RED
+COLOR_GREEN='38;5;'$CODE_GREEN
+COLOR_YELLOW='38;5;'$CODE_YELLOW
+COLOR_DARK_YELLOW='38;5;'$CODE_DARK_YELLOW
+COLOR_BLUE='38;5;'$CODE_BLUE
+COLOR_BLUE_ALT='38;5;'$CODE_BLUE_ALT
+COLOR_PURPLE='38;5;'$CODE_PURPLE
+COLOR_PURPLE_ALT='38;5;'$CODE_PURPLE_ALT
+COLOR_CYAN='38;5;'$CODE_CYAN
+COLOR_CYAN_ALT='38;5;'$CODE_CYAN_ALT
+COLOR_WHITE='38;5;'$CODE_WHITE
+COLOR_BLACK='38;5;'$CODE_BLACK
+COLOR_COMMENT_GRAY='38;5;'$CODE_COMMENT_GRAY
+COLOR_GUTTER_FG_GRAY='38;5;'$CODE_GUTTER_FG_GRAY
+COLOR_CURSOR_GRAY='38;5;'$CODE_CURSOR_GRAY
+COLOR_VISUAL_GRAY='38;5;'$CODE_VISUAL_GRAY
+COLOR_SPECIAL_GRAY='38;5;'$CODE_SPECIAL_GRAY
+COLOR_VERT_SPLIT='38;5;'$CODE_VERT_SPLIT
 
 EFFECT_BOLD=1
 
@@ -83,8 +106,49 @@ export GREP_COLORS='mt='$COLOR_MATCH':fn='$COLOR_FILE':ln='$COLOR_LINE':bn='$COL
 # PS1
 #=======================================
 
-if [[ ${EUID} == 0 ]] ; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\e['$COLOR_RED'm\]\u@\h \[\e['$COLOR_WHITE'm\]\W \[\e['$COLOR_RED'm\]$\[\e[00m\] '
+function get_RAM {
+  free -m | awk '{if (NR==3) print $4}' | xargs -i echo 'scale=1;{}/1000' | bc
+}
+
+function get_nr_jobs() {
+  jobs | wc -l
+}
+
+function get_nr_CPUs() {
+  grep -c "^processor" /proc/cpuinfo
+}
+
+function get_load() {
+    # CPU load in the last 5 minutes
+    uptime | awk '{print $9}' | sed 's/,$//' | sed 's/,/\./'
+}
+
+CALLER=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`
+if [[ "$CALLER" == "zsh" ]]; then
+    # if [[ ${EUID} == 0 ]]; then
+    #     PROMPT_COLOR=$CODE_RED
+    # else
+    #     PROMPT_COLOR=$CODE_BLUE
+    # fi
+    # # LEGEND
+    # # %n - username
+    # # %d - pwd
+    # # %~ - same as %d, but replaces home with ~
+    # # %? - status of last command
+    # # %j - number of jobs
+    # # %N - name of script, sourced file or shell being executed (if none then $0)
+    # # %L - value of SHLVL
+    # # left prompt
+    # PROMPT='${ret_status} %{%F{'$PROMPT_COLOR'}%c%{$reset_color%} $(git_prompt_info)'
+    # # PROMPT='%F{'$PROMPT_COLOR'}%n@%m %F{'$CODE_WHITE'}%1~ %F{'$PROMPT_COLOR'}$ %f'
+    # # right prompt
+    # RPROMPT=$(vi_mode_prompt_info)
+    # # RPROMPT='%F{'$PROMPT_COLOR'}[?%?, $(get_RAM)G, $(get_load) ($(get_nr_CPUs))]'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\[\e['$COLOR_BLUE'm\]\u@\h \[\e['$COLOR_WHITE'm\]\W \[\e['$COLOR_BLUE'm\]$\[\e[00m\] '
+    # bash
+    if [[ ${EUID} == 0 ]]; then
+        PS1='${debian_chroot:+($debian_chroot)}\[\e['$COLOR_RED'm\]\u@\h \[\e['$COLOR_WHITE'm\]\W \[\e['$COLOR_RED'm\]$\[\e[00m\] '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\[\e['$COLOR_BLUE'm\]\u@\h \[\e['$COLOR_WHITE'm\]\W \[\e['$COLOR_BLUE'm\]$\[\e[00m\] '
+    fi
 fi

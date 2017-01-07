@@ -152,6 +152,24 @@ autocmd InsertLeave *.js,*.py,*.cpp,*.h,*.java :match WordUnderCursor "as823ryDV
 autocmd FocusLost * silent! wa
 
 "=====================================
+" GUI OPTIONS
+"=====================================
+
+if has('gui')
+    " set the font
+    set guifont=Consolas\ 9,Inconsolata\ 10
+    " remove the menu
+    set guioptions-=m
+    " remove the toolbar
+    set guioptions-=T
+    " right-hand scroll bar not always present
+    set guioptions-=r
+    set guioptions-=R
+    set guioptions-=l
+    set guioptions-=L
+endif
+
+"=====================================
 " HIGHLIGHT THE CURRENT PANE
 "=====================================
 
