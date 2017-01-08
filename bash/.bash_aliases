@@ -13,6 +13,13 @@ function get_desktop_env {
 
 # open tmux with 256 colors
 alias tmux="tmux -2" 
+alias ta='tmux attach -t'
+alias tad='tmux attach -d -t'
+alias ts='tmux new-session -s'
+alias tl='tmux list-sessions'
+alias tksv='tmux kill-server'
+alias tkss='tmux kill-session -t'
+
 # use vim instead of VI
 alias vi='vim'
 

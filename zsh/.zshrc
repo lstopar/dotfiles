@@ -48,14 +48,53 @@ ENABLE_CORRECTION="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# don't replace ~ with /home/user
+AUTO_NAME_DIRS="false"
+# make completion lists small
+LIST_PACKED="true"
+# completion behavoir
+# MENU_COMPLETE="true"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
 PATH=$PATH:/usr/local/bin
-plugins=(git autojump git-extras gitfast jsontools last-working-dir mvn node npm pip python urltools vi-mode web-search wd zsh-syntax-highlighting colored-man-pages zsh-navigation-tools)
-# plugins=($PLUGS)
+
+#======================================================
+# PLUGINS
+#======================================================
+# vi-mode - enter VI mode on the command line by pressing escape
+# zsh-syntax-highlighting - synthax highlighting
+# colored-man-pages - colored man pages
+
+#======================================================
+# ZSH-NAVIGATION-TOOLS
+# n-aliases - browses aliases, relegates editing to vared
+# n-cd - browses dirstack and bookmarked directories, allows to enter selected directory
+# n-functions - browses functions, relegates editing to zed or vared
+# n-history - browses history, allows to edit and run commands from it
+# n-kill - browses processes list, allows to send signal to selected process
+# n-env - browses environment, relegates editing to vared
+# n-options - browses options, allows to toggle their state
+# n-panelize - loads output of given command into the list for browsing
+
+# git
+# git-extras
+# gitfast
+# web-search - search with 'google who is trump'
+# wd - warp directories ('wd add dir' and then 'wd dir' from anywhere)
+# autojump - jump to frequent directories using 'j dir'
+# last-working-dir - start ZSH in the directory you last finished
+# jsontools
+# node
+# npm
+# pip
+# python
+# urltools
+
+plugins=(git autojump git-extras gitfast jsontools last-working-dir node npm pip python urltools vi-mode web-search wd zsh-syntax-highlighting colored-man-pages zsh-navigation-tools)
 
 source $ZSH/oh-my-zsh.sh
 
