@@ -1,5 +1,16 @@
 #!/bin/bash
 
+function get_desktop_env {
+    if [ "$XDG_CURRENT_DESKTOP" = "" ]; then
+        DSK=$(echo "$XDG_DATA_DIRS" | sed 's/.*\(xfce\|kde\|gnome\).*/\1/')
+    else
+        DSK=$XDG_CURRENT_DESKTOP
+    fi
+
+    DSK=`echo $DSK | awk '{print tolower($0)}'`  # to lower case
+    echo "$DSK"
+}
+
 # open tmux with 256 colors
 alias tmux="tmux -2" 
 # use vim instead of VI
@@ -24,3 +35,8 @@ alias llt='ll -t'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias grep='egrep --colour=auto'
+
+# if gnome tools are available
+if [ `get_desktop_env` = 'x-cinnamon' ]; then
+    alias open='gnome-open'
+fi

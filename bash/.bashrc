@@ -106,23 +106,6 @@ export GREP_COLORS='mt='$COLOR_MATCH':fn='$COLOR_FILE':ln='$COLOR_LINE':bn='$COL
 # PS1
 #=======================================
 
-function get_RAM {
-  free -m | awk '{if (NR==3) print $4}' | xargs -i echo 'scale=1;{}/1000' | bc
-}
-
-function get_nr_jobs() {
-  jobs | wc -l
-}
-
-function get_nr_CPUs() {
-  grep -c "^processor" /proc/cpuinfo
-}
-
-function get_load() {
-    # CPU load in the last 5 minutes
-    uptime | awk '{print $9}' | sed 's/,$//' | sed 's/,/\./'
-}
-
 CALLER=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`
 if [[ "$CALLER" == "zsh" ]]; then
     A=3
