@@ -50,9 +50,9 @@ COLOR_VERT_SPLIT='38;5;'$CODE_VERT_SPLIT
 # %N - name of script, sourced file or shell being executed (if none then $0)
 # %L - value of SHLVL
 # local ret_status="%(?:%{%B%F{"$CODE_GREEN"}%}➜ :%{%B%F{"$CODE_RED"}%}➜ )"
-local ret_status="%(?:%{%F{"$CODE_BLUE"}%}%n@%m :%{%F{"$CODE_RED"}%}%n@%m)"
+local ret_status="%(?:%{%F{"$CODE_BLUE"}%}%n@%m :%{%F{"$CODE_RED"}%}%n@%m )"
 
-PROMPT='${ret_status}%{%F{'$CODE_WHITE'}%}%c%{$reset_color%}$(git_prompt_info) %{%F{'$CODE_BLUE'}%}%#%{$reset_color%}'
+PROMPT='${ret_status}%{%F{'$CODE_WHITE'}%}%c%{$reset_color%}$(git_prompt_info) %{%F{'$CODE_BLUE'}%}%#%{$reset_color%} '
 # PROMPT="${ret_status}%{%F{"$CODE_WHITE"}%}%c%{$reset_color%}$(git_prompt_info) %{%F{"$CODE_BLUE"}%}%# %{$reset_color%}"
 
 # ZSH_THEME_GIT_PROMPT_PREFIX="%{%B%F{"$CODE_BLUE"}%}git:(%{%F{"$CODE_RED"}%}"
@@ -72,7 +72,7 @@ ZSH_HIGHLIGHT_STYLES[command]=fg=$CODE_PURPLE,bold
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=$CODE_WHITE,underline
 ZSH_HIGHLIGHT_STYLES[commandseparator]=none
 ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=$CODE_RED
-ZSH_HIGHLIGHT_STYLES[path]=fg=$CODE_WHITE,underline
+ZSH_HIGHLIGHT_STYLES[path]=fg=$CODE_WHITE
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
 ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=$CODE_WHITE,underline
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none
@@ -83,26 +83,3 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=$CODE_GREEN
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=$CODE_RED
 ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=$CODE_RED
 ZSH_HIGHLIGHT_STYLES[assign]=none
-
-
-# ZSH_HIGHLIGHT_STYLES[default]=none
-# ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
-# ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
-# ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
-# ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
-# ZSH_HIGHLIGHT_STYLES[function]=fg=white,bold
-# ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
-# ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,underline
-# ZSH_HIGHLIGHT_STYLES[commandseparator]=none
-# ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
-# ZSH_HIGHLIGHT_STYLES[path]=fg=214,underline
-# ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
-# ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=white,underline
-# ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none
-# ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=none
-# ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
-# ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
-# ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
-# ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
-# ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
-# ZSH_HIGHLIGHT_STYLES[assign]=none

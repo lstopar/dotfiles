@@ -16,6 +16,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 push
 popd
 
-ln -s `pwd`/.zshrc ~/.oh-my-zsh/custom/zshrc.zsh
+ln -s `pwd`/zshrc.zsh ~/.oh-my-zsh/custom/zshrc.zsh
 ln -s `pwd`/vi-mode.zsh ~/.oh-my-zsh/custom/vi-mode.zsh
 ln -s `pwd`/lstopar.zsh-theme ~/.oh-my-zsh/themes/
+ln -s `pwd`/.zshrc ~/
