@@ -1,12 +1,14 @@
 #/bin/bash
 
-# man pages
-# mkdir ~/.zsh
+# 1) install ZSH
+# sudo -apt-get install zsh
+# 2) install OH-MY-ZSH
+# sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 
 
 # install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # plugins
 pushd . /dev/null
@@ -15,6 +17,26 @@ cd ~/.oh-my-zsh/custom/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 push
 popd
+
+if [ -e "$HOME/.oh-my-zsh/custom/zshrc.zsh" ] || [ -L "$HOME/.oh-my-zsh/custom/zshrc.zsh" ]; then
+    echo 'Removing zshrc.zsh ...'
+    rm $HOME/.oh-my-zsh/custom/zshrc.zsh
+fi
+
+if [ -e "$HOME/.oh-my-zsh/custom/vi-mode.zsh" ] || [ -L "$HOME/.oh-my-zsh/custom/vi-mode.zsh" ]; then
+    echo 'Removing vi-mode.zsh ...'
+    rm $HOME/.oh-my-zsh/custom/vi-mode.zsh
+fi
+
+if [ -e "$HOME/.oh-my-zsh/themes/lstopar.zsh-theme" ] || [ -L "$HOME/.oh-my-zsh/themes/lstopar.zsh-theme" ]; then
+    echo 'Removing vi-mode.zsh ...'
+    rm $HOME/.oh-my-zsh/themes/lstopar.zsh-theme
+fi
+
+if [ -e "$HOME/.zshrc" ] || [ -L "$HOME/.zshrc" ]; then
+    echo 'Removing .zshrc ...'
+    rm $HOME/.zshrc
+fi
 
 ln -s `pwd`/zshrc.zsh ~/.oh-my-zsh/custom/zshrc.zsh
 ln -s `pwd`/vi-mode.zsh ~/.oh-my-zsh/custom/vi-mode.zsh
