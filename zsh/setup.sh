@@ -1,7 +1,7 @@
 #/bin/bash
 
 # man pages
-mkdir ~/.zsh
+# mkdir ~/.zsh
 
 
 
