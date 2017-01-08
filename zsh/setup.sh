@@ -14,8 +14,10 @@
 pushd . /dev/null
 cd ~/.oh-my-zsh/custom/plugins
 # syntax highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-push
+if [ ! -d "zsh-syntax-highlighting" ]; then
+    echo 'Installing syntax highlighting ...'
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
 popd
 
 if [ -e "$HOME/.oh-my-zsh/custom/zshrc.zsh" ] || [ -L "$HOME/.oh-my-zsh/custom/zshrc.zsh" ]; then
@@ -41,4 +43,4 @@ fi
 ln -s `pwd`/zshrc.zsh ~/.oh-my-zsh/custom/zshrc.zsh
 ln -s `pwd`/vi-mode.zsh ~/.oh-my-zsh/custom/vi-mode.zsh
 ln -s `pwd`/lstopar.zsh-theme ~/.oh-my-zsh/themes/
-ln -s `pwd`/.zshrc ~/
+ln -s `pwd`/.zshrc ~/.zshrc
