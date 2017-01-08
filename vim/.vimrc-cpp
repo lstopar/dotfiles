@@ -23,7 +23,7 @@ nnoremap gi :YcmCompleter GoToDefinition<cr>
 nnoremap gh :YcmCompleter GoToDeclaration<cr>
 nnoremap gt :YcmCompleter GetType<cr>
 " preview the documentation
-nnoremap pd :YcmCompleter GetDoc<cr>
+nnoremap <leader>pd :YcmCompleter GetDoc<cr>
 " find all references and populate the quichfix list (works with javascript,
 " python, typescript)
 " nnoremap <leader>rr :YcmCompleter GoToReferences<cr>
@@ -59,27 +59,27 @@ so ~/.vim/config/plugin-end.vim
 so ~/.vim/config/config.vim
 
 " load cscope if it exists
-if executable("cscope") == 1
-    echo "using cscope instead of ctags ..."
-    " make tag act like cstag
-    set cscopetag
-    nnoremap <buffer> <leader>cs :cscope find s  <c-r>=expand('<cword>')<cr><cr>
-    nnoremap <buffer> <leader>cg :cscope find g  <c-r>=expand('<cword>')<cr><cr>
-    nnoremap <buffer> <leader>cc :cscope find c  <c-r>=expand('<cword>')<cr><cr>
-    nnoremap <buffer> <leader>ct :cscope find t  <c-r>=expand('<cword>')<cr><cr>
-    nnoremap <buffer> <leader>ce :cscope find e  <c-r>=expand('<cword>')<cr><cr>
-    nnoremap <buffer> <leader>cf :cscope find f  <c-r>=expand('<cfile>')<cr><cr>
-    nnoremap <buffer> <leader>ci :cscope find i ^<c-r>=expand('<cfile>')<cr>$<cr>
-    nnoremap <buffer> <leader>cd :cscope find d  <c-r>=expand('<cword>')<cr><cr>
-    command! -bar MakeCscope !cscope -bqR
-    command! LoadCscope cs add cscope.out
-    command! MakeTags MakeCscope | MakeCTags | LoadCscope
+" if executable("cscope") == 1
+"     echo "using cscope instead of ctags ..."
+"     " make tag act like cstag
+"     set cscopetag
+"     nnoremap <buffer> <leader>cs :cscope find s  <c-r>=expand('<cword>')<cr><cr>
+"     nnoremap <buffer> <leader>cg :cscope find g  <c-r>=expand('<cword>')<cr><cr>
+"     nnoremap <buffer> <leader>cc :cscope find c  <c-r>=expand('<cword>')<cr><cr>
+"     nnoremap <buffer> <leader>ct :cscope find t  <c-r>=expand('<cword>')<cr><cr>
+"     nnoremap <buffer> <leader>ce :cscope find e  <c-r>=expand('<cword>')<cr><cr>
+"     nnoremap <buffer> <leader>cf :cscope find f  <c-r>=expand('<cfile>')<cr><cr>
+"     nnoremap <buffer> <leader>ci :cscope find i ^<c-r>=expand('<cfile>')<cr>$<cr>
+"     nnoremap <buffer> <leader>cd :cscope find d  <c-r>=expand('<cword>')<cr><cr>
+"     command! -bar MakeCscope !cscope -bqR
+"     command! LoadCscope cs add cscope.out
+"     command! MakeTags MakeCscope | MakeCTags | LoadCscope
 
-    if filereadable("cscope.out")
-        echo "loading cscope tags ..."
-        :silent LoadCscope
-    endif
-endif
+"     if filereadable("cscope.out")
+"         echo "loading cscope tags ..."
+"         :silent LoadCscope
+"     endif
+" endif
 " set the build program (assumes the project has a file called build.sh)
 set makeprg=build.sh
 
