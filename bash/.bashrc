@@ -125,6 +125,7 @@ function get_load() {
 
 CALLER=`ps -p $$ | awk '$1 != "PID" {print $(NF)}'`
 if [[ "$CALLER" == "zsh" ]]; then
+    A=3
     # if [[ ${EUID} == 0 ]]; then
     #     PROMPT_COLOR=$CODE_RED
     # else
