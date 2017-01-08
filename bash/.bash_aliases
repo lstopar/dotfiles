@@ -44,6 +44,7 @@ alias egrep='egrep --color=auto'
 alias grep='egrep --colour=auto'
 
 # if gnome tools are available
-if [ `get_desktop_env` = 'x-cinnamon' ]; then
+DESK_ENV=`get_desktop_env` 
+if [ "$DESK_ENV" = "x-cinnamon" ]; then
     alias open='gnome-open'
 fi
