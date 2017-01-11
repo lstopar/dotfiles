@@ -86,8 +86,8 @@ let g:airline#extensions#syntastic#enabled = 0
 
 " here is an example of how you could replace the branch indicator with
 " the current working directory, followed by the filename.
-let g:airline_section_b = '%{getcwd()}'
-let g:airline_section_c = '%t'
+" let g:airline_section_b = '%{getcwd()}'
+" let g:airline_section_c = '%t'
 
 " surround
 let g:surround_no_insert_mappings = 1
