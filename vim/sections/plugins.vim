@@ -59,6 +59,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'glts/vim-textobj-comment'
 
 " TESTING
+Plugin 'chrisbra/csv.vim'
 Plugin 'benmills/vimux' " tmux integration for vim
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mileszs/ack.vim'
@@ -66,6 +67,27 @@ Plugin 'mileszs/ack.vim'
 "====================================
 " CONFIGURATION
 "====================================
+
+" status bar
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = '>'
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+let g:airline#extensions#syntastic#enabled = 0
+" let g:airline_section_a       (mode, crypt, paste, spell, iminsert)
+" let g:airline_section_b       (hunks, branch)
+" let g:airline_section_c       (bufferline or filename)
+" let g:airline_section_gutter  (readonly, csv)
+" let g:airline_section_x       (tagbar, filetype, virtualenv)
+" let g:airline_section_y       (fileencoding, fileformat)
+" let g:airline_section_z       (percentage, line number, column number)
+" let g:airline_section_error   (ycm_error_count, syntastic, eclim)
+" let g:airline_section_warning (ycm_warning_count, whitespace)
+
+" here is an example of how you could replace the branch indicator with
+" the current working directory, followed by the filename.
+let g:airline_section_b = '%{getcwd()}'
+let g:airline_section_c = '%t'
 
 " surround
 let g:surround_no_insert_mappings = 1
