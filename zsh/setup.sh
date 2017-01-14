@@ -40,7 +40,13 @@ if [ -e "$HOME/.zshrc" ] || [ -L "$HOME/.zshrc" ]; then
     rm $HOME/.zshrc
 fi
 
+if [ -e "$HOME/.zshenv" ] || [ -L "$HOME/.zshenv" ]; then
+    echo 'Removing .zprofile ...'
+    rm $HOME/.zshenv
+fi
+
 ln -s `pwd`/zshrc.zsh ~/.oh-my-zsh/custom/zshrc.zsh
 ln -s `pwd`/vi-mode.zsh ~/.oh-my-zsh/custom/vi-mode.zsh
 ln -s `pwd`/lstopar.zsh-theme ~/.oh-my-zsh/themes/
 ln -s `pwd`/.zshrc ~/.zshrc
+ln -s `pwd`/.zshenv ~/.zshenv
