@@ -209,6 +209,8 @@ noremap <space> :set hlsearch! hlsearch?<cr>
 
 " ignore annoying Ex mode
 nnoremap q: :q
+" save all instead of save
+nnoremap <silent> :w :wa
 
 " Better split switching
 map <silent> <C-h> :call WinMove('h')<cr>
