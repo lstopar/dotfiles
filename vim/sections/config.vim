@@ -211,6 +211,8 @@ noremap <space> :set hlsearch! hlsearch?<cr>
 nnoremap q: :q
 " save all instead of save
 nnoremap <silent> :w :wa
+" map CTRL-s to write all buffers
+nnoremap <silent> <C-s> :wa<cr>
 
 " Better split switching
 map <silent> <C-h> :call WinMove('h')<cr>
