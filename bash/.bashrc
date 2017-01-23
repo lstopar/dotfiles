@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # set 256 color terminal
-export TERM=xterm-256color
+# export TERM=xterm-256color
+if [[ $TERM == xterm  ]]; then
+    export TERM=xterm-256color
+fi
 # extend path with $PWD
 export PATH=$PATH:.
 
