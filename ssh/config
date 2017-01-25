@@ -18,3 +18,7 @@ HostName raziskave.ffa.uni-lj.si
 User root
 Port 22
 
+Host fzi
+HostName ipe-koi15.fzi.de
+User stopar
+Port 22
