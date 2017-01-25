@@ -5,9 +5,6 @@
 " Vundle plugin manager
 Plugin 'gmarik/vundle'
 
-" enable command aliasing
-" Plugin 'vim-scripts/cmdalias.vim'
-
 " color schemes
 Plugin 'flazz/vim-colorschemes'
 " fancy status line
@@ -33,6 +30,12 @@ Plugin 'justinmk/vim-ipmotion'
 " context-aware pasting
 Plugin 'sickill/vim-pasta'
 
+" VIMDIFF
+Plugin 'vim-scripts/CountJump'
+Plugin 'vim-scripts/ingo-library'
+" go to next/previous conflick using ]x and [x
+Plugin 'vim-scripts/ConflictMotions'
+
 " OPERATIONS ON TEXT OBJECTS
 " comment out sections of code using gc
 Plugin 'tpope/vim-commentary'
@@ -45,8 +48,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'christoomey/vim-titlecase'
 " sort lines, comma separated words (args), ... using gs (gsip, gs10j, gsi(  )
 Plugin 'christoomey/vim-sort-motion'
-" copy text objects into system clipboard using cp
-"Plugin 'christoomey/vim-system-copy'
 
 " TEXT OBJECTS
 " plugin to create your own text objects

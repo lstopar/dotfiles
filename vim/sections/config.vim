@@ -213,6 +213,8 @@ nnoremap q: :q
 nnoremap <silent> :w :wa
 " map CTRL-s to write all buffers
 nnoremap <silent> <C-s> :wa<cr>
+" when used in insert mode, go to normal mode and save all
+inoremap <silent> <C-s> <Esc>:wa<cr>
 
 " Better split switching
 map <silent> <C-h> :call WinMove('h')<cr>

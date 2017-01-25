@@ -76,3 +76,7 @@ nnoremap <leader>p :LLPStartPreview<cr>
 
 " start Vim showing NERDTree
 autocmd vimenter * NERDTree
+
+augroup DisableMappings
+    autocmd! VimEnter * :inoremap <silent> <C-s> <Esc>:wa<cr>
+augroup END
