@@ -1,5 +1,7 @@
 bindkey -a -s "diw" "bde"
+bindkey -a -s "ciw" "bce"
 bindkey -a -s "daw" "bdw"
+bindkey -a -s "caw" "bcw"
 # handle single quote
 bindkey -a -s "di'" "F'ldt'"
 bindkey -a -s "da'" "F'df'"
