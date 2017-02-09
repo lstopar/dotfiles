@@ -31,7 +31,7 @@ if [ -e "$HOME/.oh-my-zsh/custom/vi-mode.zsh" ] || [ -L "$HOME/.oh-my-zsh/custom
 fi
 
 if [ -e "$HOME/.oh-my-zsh/themes/lstopar.zsh-theme" ] || [ -L "$HOME/.oh-my-zsh/themes/lstopar.zsh-theme" ]; then
-    echo 'Removing vi-mode.zsh ...'
+    echo 'Removing theme ...'
     rm $HOME/.oh-my-zsh/themes/lstopar.zsh-theme
 fi
 
