@@ -1,17 +1,23 @@
 #!/bin/bash
 
 # help
-USAGE="Usage: $(basename "$0") [-h] HOST_PORT REMOTE_HOST:REMOTE_PORT -- create an ssh tunnel from from HOST_PORT to REMOTE_HOST:REMOTE_PORT
+USAGE="Usage: $(basename "$0") [-h] [-r] HOST_PORT REMOTE_HOST:REMOTE_PORT -- create an ssh tunnel from from HOST_PORT to REMOTE_HOST:REMOTE_PORT
 
 Options:
     -h          print help
+    -r          reverse tunnel
 "
 
-while getopts 'h' OPT; do
+REV=0
+
+while getopts 'hr' OPT; do
     case "$OPT" in
         h)
             echo "$USAGE"
             exit
+            ;;
+        r)
+            REV=1
             ;;
         *)
             echo 'Invalid option: '$OPT
@@ -25,5 +31,14 @@ shift $((OPTIND - 1))
 SRC_PORT=$1
 DST=`echo $2 | cut -f1 -d:`
 DST_PORT=`echo $2 | cut -f2 -d:`
+# UNAME=`echo $DST | cut -f1 -d@`
+# DST_HOST=`echo $DST | cut -f2 -d@`
 
-ssh -L $SRC_PORT:localhost:$DST_PORT $DST
+if [ "$REV" == "1" ]; then
+    echo 'creating reverse tunnel'
+    ssh -R $SRC_PORT:localhost:$DST_PORT $DST
+else
+    # echo "ssh -L $SRC_PORT:$DST_HOST:$DST_PORT $UNAME@$DST_HOST"
+    echo 'creating tunnel'
+    ssh -L $SRC_PORT:localhost:$DST_PORT $DST
+fi
