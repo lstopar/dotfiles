@@ -1,0 +1,24 @@
+#!/bin/bash
+
+USAGE="$(basename "$0") [-h] HOST_PORT REMOTE_HOST:REMOTE_PORT"
+
+while getopts 'h' OPT; do
+    echo 'found: '$OPT
+    case "$OPT" in
+        h)
+            echo $USAGE
+            exit
+            ;;
+        *)
+            echo 'Invalid option: '$OPT
+            echo $USAGE
+            exit 1
+    esac
+done
+shift $((OPTIND - 1))
+
+SRC_PORT=$1
+DST=`echo $2 | cut -f1 -d:`
+DST_PORT=`echo $2 | cut -f2 -d:`
+
+ssh -L $SRC_PORT:localhost:$DST_PORT $DST
