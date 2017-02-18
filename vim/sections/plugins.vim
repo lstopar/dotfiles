@@ -60,7 +60,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'glts/vim-textobj-comment'
 
 " TESTING
-Plugin 'chrisbra/csv.vim'
+" Plugin 'chrisbra/csv.vim'     " is slow for large files
 Plugin 'benmills/vimux' " tmux integration for vim
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mileszs/ack.vim'
