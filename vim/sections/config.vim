@@ -210,7 +210,8 @@ noremap <space> :set hlsearch! hlsearch?<cr>
 " ignore annoying Ex mode
 nnoremap q: :q
 " save all instead of save
-nnoremap <silent> :w :wa
+" nnoremap <silent> :w :wa
+
 " map CTRL-s to write all buffers
 nnoremap <silent> <C-s> :wa<cr>
 " when used in insert mode, go to normal mode and save all
