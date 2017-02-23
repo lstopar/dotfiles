@@ -12,6 +12,11 @@ Plugin 'thinca/vim-textobj-function-javascript'
 " function argument handling
 Plugin 'vim-scripts/argtextobj.vim'
 
+" TESTING
+Plugin 'majutsushi/tagbar'
+" combine NERDTree and Tagbar
+Plugin 'pseewald/nerdtree-tagbar-combined'
+
 " Vims preview default
 " set completeopt=preview,menuone
 set completeopt=menuone
@@ -39,11 +44,21 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"  " TODO
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" show current tag even if folded
+" let g:tagbar_autoshowtag = 1
+
 "=====================================
 " INITIALIZATION
 "=====================================
 
-autocmd vimenter * NERDTree
+" open the file browser
+" autocmd vimenter * NERDTree
+autocmd vimenter * :ToggleNERDTreeAndTagbar
+" open file overview
+" autocmd VimEnter * nested :call tagbar#autoopen(1)
+" autocmd VimEnter * nested :TagbarOpen
+" autocmd VimEnter * :TagbarOpen
+" autocmd BufEnter * :TagbarOpen
 
 "=====================================
 " KEY MAPPINGS
@@ -52,3 +67,8 @@ autocmd vimenter * NERDTree
 " open/close syntastic error list
 nnoremap <leader>oe :lopen<cr>
 nnoremap <leader>ce :lclose<cr>
+
+" toggle both NERDTree and Tagbar instread of each one individually
+autocmd BufEnter * nnoremap <silent> <leader>tf :ToggleNERDTreeAndTagbar<CR><C-w>=
+" jump to the tagbar when pressing <leader>t
+nnoremap <silent> <leader>t :TagbarOpen 'fj'<cr>

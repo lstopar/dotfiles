@@ -307,9 +307,9 @@ nnoremap <leader>fs :%s/\s\+$//e<cr>''
 " nnoremap <leader>ft gg=G''
 nnoremap <leader>ft :retab<cr>
 " open/close the file tree
-nnoremap <leader>of :NERDTree<cr>
-nnoremap <leader>cf :NERDTreeClose<cr>
-nnoremap <leader>tf :NERDTreeToggle<cr>
+nnoremap <leader>of :NERDTree<cr><C-w>=
+nnoremap <leader>cf :NERDTreeClose<cr><C-w>=
+nnoremap <leader>tf :NERDTreeToggle<cr><C-w>=
 " refresh all buffers
 nnoremap <leader>ra :checktime<cr>
 
