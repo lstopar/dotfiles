@@ -22,13 +22,15 @@ Plugin 'sheerun/vim-polyglot'
 " auto close brackets, quotes, ...
 Plugin 'jiangmiao/auto-pairs'
 " expanding selected regions
-Plugin 'terryma/vim-expand-region'
+" Plugin 'terryma/vim-expand-region'
 " enables repeating other supported plugins with the . command
 Plugin 'tpope/vim-repeat'
 " improve paragraph detection
 Plugin 'justinmk/vim-ipmotion'
 " context-aware pasting
 Plugin 'sickill/vim-pasta'
+" support for multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
 
 " VIMDIFF
 Plugin 'vim-scripts/CountJump'
@@ -37,33 +39,31 @@ Plugin 'vim-scripts/ingo-library'
 Plugin 'vim-scripts/ConflictMotions'
 
 " OPERATIONS ON TEXT OBJECTS
+" change surrounding tags, parentheses, brackets, ... using cs'", ds' (ysiw" to add quotes around a word)
+Plugin 'tpope/vim-surround'
 " comment out sections of code using gc
 Plugin 'tpope/vim-commentary'
 " replace with register using gr (avoids overriding the register)
 Plugin 'vim-scripts/ReplaceWithRegister'
-" change surrounding tags, parentheses, brackets, ... using cs'", ds' (ysiw"
-" to add quotes around a word)
-Plugin 'tpope/vim-surround'
 " titlecase text objects using gt
-Plugin 'christoomey/vim-titlecase'
+" Plugin 'christoomey/vim-titlecase'
 " sort lines, comma separated words (args), ... using gs (gsip, gs10j, gsi(  )
-Plugin 'christoomey/vim-sort-motion'
+" Plugin 'christoomey/vim-sort-motion'
 
 " TEXT OBJECTS
 " plugin to create your own text objects
 Plugin 'kana/vim-textobj-user'
-" inner-line text object, inner line represented by _ (d_, c_)
-Plugin 'bruno-/vim-line'
-" lines with same indent, represented by i
-Plugin 'michaeljsmith/vim-indent-object'
 " comment, represented by c
 Plugin 'glts/vim-textobj-comment'
+" inner-line text object, inner line represented by _ (d_, c_)
+" Plugin 'bruno-/vim-line'
+" lines with same indent, represented by i
+" Plugin 'michaeljsmith/vim-indent-object'
 
 " TESTING
 " Plugin 'chrisbra/csv.vim'     " is slow for large files
-Plugin 'benmills/vimux' " tmux integration for vim
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'mileszs/ack.vim'
+" Plugin 'benmills/vimux' " tmux integration for vim
+" Plugin 'mileszs/ack.vim'
 
 "====================================
 " CONFIGURATION
@@ -104,10 +104,9 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_lazy_update = 1
 let g:ctrlp_regexp = 1
 
-" expanding selection region
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
+" " expanding selection region
+" vmap v <Plug>(expand_region_expand)
+" vmap <C-v> <Plug>(expand_region_shrink)
 
 " commenting sections of code using CTRL+/
 vmap <C-_> gc
-

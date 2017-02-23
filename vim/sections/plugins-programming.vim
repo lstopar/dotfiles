@@ -4,13 +4,13 @@ Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
-" function argument handling
-Plugin 'vim-scripts/argtextobj.vim'
-
+" TEXT OBJECTS
 " function text object using f (dif, caf, ...)
 Plugin 'kana/vim-textobj-function'
 " functions for javascript
 Plugin 'thinca/vim-textobj-function-javascript'
+" function argument handling
+Plugin 'vim-scripts/argtextobj.vim'
 
 " Vims preview default
 " set completeopt=preview,menuone
