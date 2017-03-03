@@ -133,6 +133,8 @@ set clipboard=unnamedplus
 set pastetoggle=<F2>
 " allow selecting rectangles in text using ctrl-v
 set virtualedit=block
+" allow vim to increase/decrease alphabet characters
+set nrformats+=alpha
 
 " set the backup, swap and undo files directories
 set undodir=~/.vim/.undo//
