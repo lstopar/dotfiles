@@ -204,7 +204,7 @@ nnoremap Y y$
 nnoremap n nzzzv
 nnoremap N Nzzzv
 " clear highlighted search
-noremap <space> :set hlsearch! hlsearch?<cr>
+" noremap <space> :set hlsearch! hlsearch?<cr>
 
 " nmap <S-CR> O<Esc>j
 " nmap <CR> o<Esc>
