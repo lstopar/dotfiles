@@ -43,6 +43,9 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias grep='egrep --colour=auto'
 
+# FLAKE8 (python syntax checker)
+alias flake8='flake8 --ignore H233,E501'
+
 # if gnome tools are available
 DESK_ENV=`get_desktop_env` 
 if [ "$DESK_ENV" = "x-cinnamon" ]; then
