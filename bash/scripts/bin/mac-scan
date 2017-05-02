@@ -1,0 +1,14 @@
+#!/bin/bash
+
+IFACE=wlan0
+
+GATEWAY=`netstat -nr | grep '^0.0.0.0' | awk '{print $2}'`
+MASK=${GATEWAY%.*}".0"
+# scan all IPs where the first NUMBITS are the same
+NUMBITS=24
+
+echo "mask: "$MASK
+
+echo "scanning "$MASK
+# sudo nmap -sn -oG - $MASK"/"$NUMBITS
+sudo nmap -sn $MASK"/"$NUMBITS | awk '/Nmap scan report/{if (!$6) {printf "(unknown) (";printf $5;printf ")"} else {printf $5;printf " ";printf $6};getline;getline;printf " ";if ($1 == "MAC") { print $3 } else { print "(missing)" }}' | column -t
