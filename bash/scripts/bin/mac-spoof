@@ -19,6 +19,9 @@ while getopts 'hri:' OPT; do
         r)
             RESET=1
             ;;
+        i)
+            IFACE=$OPTARG
+            ;;
         *)
             echo 'Invalid option: '$OPT
             echo $USAGE
