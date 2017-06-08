@@ -143,10 +143,10 @@ set directory=~/.vim/.swp//
 
 highlight WordUnderCursor ctermbg=DarkGray guibg=green
 
-autocmd CursorHoldI *.js,*.py,*.cpp,*.h,*.java exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-autocmd CursorHold *.js,*.py,*.cpp,*.h,*.java exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-autocmd InsertLeave *.js,*.py,*.cpp,*.h,*.java :match WordUnderCursor "as823ryDVBD3323s"
-autocmd InsertLeave *.js,*.py,*.cpp,*.h,*.java :match WordUnderCursor "as823ryDVBD3323s"
+autocmd CursorHoldI *.js,*.py,*.cpp,*.h,*.hpp,*.java exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd CursorHold *.js,*.py,*.cpp,*.h,*.hpp,*.java exe printf('match WordUnderCursor /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd InsertLeave *.js,*.py,*.cpp,*.h,*.hpp,*.java :match WordUnderCursor "as823ryDVBD3323s"
+autocmd InsertLeave *.js,*.py,*.cpp,*.h,*.hpp,*.java :match WordUnderCursor "as823ryDVBD3323s"
 
 " auto resize panes on resize
 "autocmd VimResized * exe 'normal! \<c-w>='
@@ -304,7 +304,7 @@ command! Tmake VimuxRunCommand(&makeprg)
 nnoremap <leader>/ "fyiw /<c-r>f<cr>"
 " FIX - f
 " remove trailing white spaces
-nnoremap <leader>fs :%s/\s\+$//e<cr>''
+nnoremap <leader>fs :%s/\s\+$//e<cr>'':noh<cr>
 " remove mixed indentation
 " nnoremap <leader>ft gg=G''
 nnoremap <leader>ft :retab<cr>
