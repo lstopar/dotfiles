@@ -1,0 +1,41 @@
+#!/bin/bash
+
+USAGE="Usage: $(basename "$0") [-r] [-i ethx] MAC_ADDR -- set the mac address
+
+Options:
+    -i          sets the network interface (defaults to wlan0)
+    -r          reset the mac to default
+"
+
+IFACE=wlan0
+RESET=0
+
+while getopts 'hri:' OPT; do
+    case "$OPT" in
+        h)
+            echo "$USAGE"
+            exit
+            ;;
+        r)
+            RESET=1
+            ;;
+        i)
+            IFACE=$OPTARG
+            ;;
+        *)
+            echo 'Invalid option: '$OPT
+            echo $USAGE
+            exit 1
+    esac
+done
+shift $((OPTIND - 1))
+
+if [ "$RESET" == "1" ]; then
+    sudo macchanger -p $IFACE
+else
+    MAC_ADDR=$1
+
+    sudo ifconfig $IFACE down
+    sudo macchanger -m $MAC_ADDR $IFACE
+    sudo ifconfig $IFACE up
+fi
