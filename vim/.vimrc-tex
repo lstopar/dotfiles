@@ -5,9 +5,6 @@
 so ~/.vim/config/plugin-init.vim
 so ~/.vim/config/plugins.vim
 
-" Plugin 'xolox/vim-misc'
-" " save panes and buffers when exiting
-" Plugin 'xolox/vim-session'
 " live preview for LaTeX
 Plugin 'xuhdev/vim-latex-live-preview'
 " LaTeX plugin
