@@ -128,7 +128,11 @@ set laststatus=2
 
 " CLIPBOARD
 " copy into system clipboard whenever text is yanked
-set clipboard=unnamedplus
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
 " toggle pasting with/without indents
 set pastetoggle=<F2>
 " allow selecting rectangles in text using ctrl-v
