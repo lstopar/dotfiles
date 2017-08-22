@@ -158,6 +158,15 @@ autocmd InsertLeave *.js,*.py,*.cpp,*.h,*.hpp,*.java :match WordUnderCursor "as8
 autocmd FocusLost * silent! wa
 
 "=====================================
+" CODE FORMATTING
+"=====================================
+
+" do not add an indent before case statements
+set cinoptions+=:0
+" put the closing bracket in the same column as the case label
+set cinoptions+=l1
+
+"=====================================
 " GUI OPTIONS
 "=====================================
 
