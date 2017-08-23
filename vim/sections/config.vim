@@ -165,6 +165,8 @@ autocmd FocusLost * silent! wa
 set cinoptions+=:0
 " put the closing bracket in the same column as the case label
 set cinoptions+=l1
+" place C++ scope declarations on the same indent as the rest of the class
+set cinoptions+=g0
 
 "=====================================
 " GUI OPTIONS
