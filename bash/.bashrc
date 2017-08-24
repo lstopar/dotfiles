@@ -10,12 +10,13 @@ fi
 # Mac specific stuff
 if [[ `uname -s` == "Darwin" ]]; then
 	# echo "setting Mac specific options"
+    export PATH="$HOME/bin:$PATH"
 	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
 # extend path with $PWD
-export PATH=$PATH:.
+export PATH=.:$PATH
 
 # set color codes
 CODE_RED='204'
