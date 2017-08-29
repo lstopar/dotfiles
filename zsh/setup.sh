@@ -45,6 +45,11 @@ if [ -e "$HOME/.zshenv" ] || [ -L "$HOME/.zshenv" ]; then
     rm $HOME/.zshenv
 fi
 
+if [ ! -d "$HOME/.env" ]; then
+    echo "Creating ~/.env ..."
+    mkdir $HOME/.env
+fi
+
 ln -s `pwd`/zshrc.zsh ~/.oh-my-zsh/custom/zshrc.zsh
 ln -s `pwd`/vi-mode.zsh ~/.oh-my-zsh/custom/vi-mode.zsh
 ln -s `pwd`/lstopar.zsh-theme ~/.oh-my-zsh/themes/
