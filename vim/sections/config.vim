@@ -1,3 +1,12 @@
+let s:macos = 0
+
+if has("unix")
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        let s:macos = 1
+    endif
+endif
+
 "====================================
 " ABBREVIATIONS
 "====================================
@@ -81,6 +90,9 @@ syntax on
 
 " line overflow
 set nowrap
+" set word wrap only for specific file types
+autocmd BufRead,BufNewFile   *.txt,*.tex set wrap
+
 " line numbers
 set number
 " show line numbers relative to the current line
@@ -229,10 +241,17 @@ nnoremap q: :q
 " save all instead of save
 " nnoremap <silent> :w :wa
 
-" map CTRL-s to write all buffers
-nnoremap <silent> <C-s> :wa<cr>
-" when used in insert mode, go to normal mode and save all
-inoremap <silent> <C-s> <Esc>:wa<cr>
+if s:macos == 1
+    " map CTRL-s to write all buffers
+    nnoremap <silent> <C-s> :wa<cr>
+    " when used in insert mode, go to normal mode and save all
+    inoremap <silent> <C-s> <Esc>:wa<cr>
+else
+    " map CTRL-s to write all buffers
+    nnoremap <silent> <C-s> :wa<cr>
+    " when used in insert mode, go to normal mode and save all
+    inoremap <silent> <C-s> <Esc>:wa<cr>
+endif
 
 " Better split switching
 map <silent> <C-h> :call WinMove('h')<cr>
