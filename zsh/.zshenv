@@ -7,7 +7,9 @@ export NVM_DIR=~/.nvm
 # source all the files in directory ~/.env allowing projects to set their envorinment variables
 if [ -d ~/.env ]; then
     for fname in ~/.env/*; do
-        source $fname
+        if [ -f "$fname" ]; then
+            source $fname
+        fi
     done
 fi
 
