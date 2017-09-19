@@ -14,3 +14,6 @@ if [ "$1" == '--clipboard' ]; then
     echo 'Setting up clipboard ...'
     cat $CONF_DIR/.tmux-clipboard.conf >> ~/.tmux.conf
 fi
+
+# install the plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
