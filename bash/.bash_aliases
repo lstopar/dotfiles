@@ -12,7 +12,7 @@ function get_desktop_env {
 }
 
 # open tmux with 256 colors
-alias tmux="tmux -2" 
+alias tmux="tmux -2"
 alias ta='tmux attach -t'
 alias tad='tmux attach -d -t'
 alias ts='tmux new-session -s'
@@ -37,6 +37,9 @@ alias lls='ll -S'
 # sort ll by modification time
 alias llt='ll -t'
 
+# TREE
+alias tree='tree -Clf'
+
 # GREP
 # give color to grep and redirect it to egrep
 alias fgrep='fgrep --color=auto'
@@ -47,7 +50,7 @@ alias grep='egrep --colour=auto'
 alias flake8='flake8 --ignore H233,E501'
 
 # if gnome tools are available
-DESK_ENV=`get_desktop_env` 
+DESK_ENV=`get_desktop_env`
 if [ "$DESK_ENV" = "x-cinnamon" ]; then
     alias open='gnome-open'
 fi
