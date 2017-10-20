@@ -1,6 +1,5 @@
-
 {
-    "extends": "/home/jrupnik/.jshintrc",
+    "extends": "../.jshintrc",
     "jquery": true
 }
 
