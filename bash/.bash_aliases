@@ -46,6 +46,11 @@ alias grep='egrep --colour=auto'
 # FLAKE8 (python syntax checker)
 alias flake8='flake8 --ignore H233,E501'
 
+# Mac specific stuff
+if [[ `uname -s` == "Darwin" ]]; then
+    alias ctags="`brew --prefix`/bin/ctags"
+fi
+
 # if gnome tools are available
 DESK_ENV=`get_desktop_env` 
 if [ "$DESK_ENV" = "x-cinnamon" ]; then
