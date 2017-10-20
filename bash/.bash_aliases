@@ -25,7 +25,7 @@ alias vi='vim'
 
 # LS
 # make ll human readable and show directories first
-alias ls='ls --color=auto'
+alias ls='ls --color=always'
 # list non-hidden files
 alias l='ls -lh --sort=extension --group-directories-first'
 # list all files
