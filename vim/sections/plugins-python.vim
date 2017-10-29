@@ -16,4 +16,4 @@ let g:vim_json_syntax_conceal = 0
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.ejs,*.xml"
 
 " syntastic
-let g:syntastic_python_flake8_args='--ignore=H233,E501,E226'
+let g:syntastic_python_flake8_args='--ignore=E127,E226,H233,E302,E303,E401,E501'
