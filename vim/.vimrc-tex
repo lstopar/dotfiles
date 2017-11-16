@@ -23,6 +23,9 @@ so ~/.vim/config/plugin-end.vim
 so ~/.vim/config/functions.vim
 so ~/.vim/config/config.vim
 
+" check if we are running on mac
+" let s:is_mac = has("unix") && system("uname -s") == "Darwin"
+
 " configuration
 set wrap
 " better line breaking
@@ -61,6 +64,10 @@ set indentkeys+=},],.,)
 
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
+
+" if s:is_mac
+"     let g:livepreview_engine = 'my engine'
+" endif
 
 inoremap <C-S> <C-n>
 
