@@ -31,6 +31,9 @@ Plugin 'justinmk/vim-ipmotion'
 Plugin 'sickill/vim-pasta'
 " support for multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
+" keep a stack of yanks and scroll them with meta-p and meta-P
+" TODO figure out how to enable this one. It looks cool.
+" Plugin 'maxbrunsfeld/vim-yankstack'
 
 " VIMDIFF
 Plugin 'vim-scripts/CountJump'
@@ -45,25 +48,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 " replace with register using gr (avoids overriding the register)
 Plugin 'vim-scripts/ReplaceWithRegister'
-" titlecase text objects using gt
-" Plugin 'christoomey/vim-titlecase'
-" sort lines, comma separated words (args), ... using gs (gsip, gs10j, gsi(  )
-" Plugin 'christoomey/vim-sort-motion'
 
 " TEXT OBJECTS
 " plugin to create your own text objects
 Plugin 'kana/vim-textobj-user'
 " comment, represented by c
 Plugin 'glts/vim-textobj-comment'
-" inner-line text object, inner line represented by _ (d_, c_)
-" Plugin 'bruno-/vim-line'
-" lines with same indent, represented by i
-" Plugin 'michaeljsmith/vim-indent-object'
-
-" TESTING
-" Plugin 'chrisbra/csv.vim'     " is slow for large files
-" Plugin 'benmills/vimux' " tmux integration for vim
-" Plugin 'mileszs/ack.vim'
 
 "====================================
 " CONFIGURATION

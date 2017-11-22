@@ -1,3 +1,6 @@
+Host *
+    UseKeychain yes
+
 Host motorka
 HostName motorka.ijs.si
 User lstopar
