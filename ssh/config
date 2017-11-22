@@ -1,5 +1,4 @@
-Host *
-    UseKeychain yes
+Include ~/os-specific
 
 Host motorka
 HostName motorka.ijs.si
