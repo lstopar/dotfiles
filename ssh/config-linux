@@ -1,0 +1,24 @@
+Host motorka
+HostName motorka.ijs.si
+User lstopar
+Port 22
+
+Host nissa
+HostName 192.168.84.42
+User proasense
+Port 22
+
+Host legoberry
+HostName legoberry.home
+User pi
+Port 22
+
+Host ffa
+HostName raziskave.ffa.uni-lj.si
+User lstopar
+Port 22
+
+Host fzi
+HostName ipe-koi15.fzi.de
+User stopar
+Port 22
