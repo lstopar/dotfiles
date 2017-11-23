@@ -6,7 +6,7 @@ if [ -e "$HOME/.ssh/config" ] || [ -L "$HOME/.ssh/config" ]; then
 fi
 
 os_file='config-linux'
-if [ `uname -s` == "Darwin\n" ]; then
+if [ `uname -s` == "Darwin" ]; then
     os_file='config-mac'
 fi
 
