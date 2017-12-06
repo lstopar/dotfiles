@@ -21,8 +21,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'sheerun/vim-polyglot'
 " auto close brackets, quotes, ...
 Plugin 'jiangmiao/auto-pairs'
-" expanding selected regions
-" Plugin 'terryma/vim-expand-region'
 " enables repeating other supported plugins with the . command
 Plugin 'tpope/vim-repeat'
 " improve paragraph detection
@@ -51,9 +49,9 @@ Plugin 'vim-scripts/ReplaceWithRegister'
 
 " TEXT OBJECTS
 " plugin to create your own text objects
-Plugin 'kana/vim-textobj-user'
+" Plugin 'kana/vim-textobj-user'
 " comment, represented by c
-Plugin 'glts/vim-textobj-comment'
+" Plugin 'glts/vim-textobj-comment'
 
 "====================================
 " CONFIGURATION
