@@ -1,0 +1,43 @@
+#!/bin/bash
+
+USAGE="Usage: $(basename "$0") [-h] -p $PID -t
+
+Options:
+    -h          print help
+    -p          PID
+    -t          sampling interval (e.g. 1s, 5m, etc.)
+"
+
+pid=""
+interval=1m
+
+while getopts 'hp:t:' OPT; do
+    case "$OPT" in
+        h)
+            echo "$USAGE"
+            exit
+            ;;
+        p)
+            pid=$OPTARG
+            ;;
+        t)
+            interval=$OPTARG
+            ;;
+        *)
+            echo 'Invalid option: '$OPT
+            echo $USAGE
+            exit 1
+    esac
+done
+shift $((OPTIND - 1))
+
+if [ "$pid" == "" ]; then
+    echo "Missing parameter PID: "$pid"!"
+    exit 1
+fi
+
+while true; do
+    stats=`ps -p $pid -o %cpu,%mem,cmd`
+    echo `date -Iseconds`': '$stats
+    sleep $interval
+done

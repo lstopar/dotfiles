@@ -6,11 +6,11 @@ Plugin 'honza/vim-snippets'
 
 " TEXT OBJECTS
 " function text object using f (dif, caf, ...)
-Plugin 'kana/vim-textobj-function'
+" Plugin 'kana/vim-textobj-function'
 " functions for javascript
-Plugin 'thinca/vim-textobj-function-javascript'
+" Plugin 'thinca/vim-textobj-function-javascript'
 " function argument handling
-Plugin 'vim-scripts/argtextobj.vim'
+" Plugin 'vim-scripts/argtextobj.vim'
 
 " TESTING
 Plugin 'majutsushi/tagbar'
