@@ -36,9 +36,13 @@ set breakindent
 " spellchecking
 set spell
 " set spellcheck language
-setlocal spell spelllang=en_us
+set spell spelllang=en_us
+" set the max number of lines for the spell checker
+syn sync maxlines=20000
 " check if the first word in a sentence starts with a capital
-" set spellcapcheck=1
+set spellcapcheck=1
+" set spelling in the top level group
+" syntax spell toplevel
 " no not check comments
 let g:tex_comment_nospell=1
 
