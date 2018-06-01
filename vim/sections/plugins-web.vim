@@ -5,8 +5,6 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'sidorares/node-vim-debugger'
 " Node.js plugin
 Plugin 'moll/vim-node'
-" JSON
-Plugin 'elzr/vim-json'
 " auto close (X)HTML tags
 Plugin 'alvan/vim-closetag'
 Plugin 'ap/vim-css-color', { 'for': ['css','stylus','scss']  } " set the background of hex color values to the color

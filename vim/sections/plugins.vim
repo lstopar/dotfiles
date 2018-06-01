@@ -47,6 +47,13 @@ Plugin 'tpope/vim-commentary'
 " replace with register using gr (avoids overriding the register)
 Plugin 'vim-scripts/ReplaceWithRegister'
 
+" FILE FORMATS
+" JSON
+Plugin 'elzr/vim-json'
+" JSON5
+Plugin 'GutenYe/json5.vim'
+Plugin 'hjson/vim-hjson'
+
 " TEXT OBJECTS
 " plugin to create your own text objects
 " Plugin 'kana/vim-textobj-user'

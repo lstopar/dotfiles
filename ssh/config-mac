@@ -7,9 +7,19 @@ User lstopar
 Port 22
 
 Host mach
-HostName 95.87.154.161
+HostName 95.87.154.175
 User lstopar
 Port 22
+
+Host legomach
+HostName 95.87.154.151
+User mach
+Port 22
+
+Host roadrunner
+HostName roadrunner.solvesall.com
+User lukas
+Port 2222
 
 Host nissa
 HostName 192.168.84.42
