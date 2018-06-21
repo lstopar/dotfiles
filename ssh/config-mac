@@ -7,8 +7,8 @@ User lstopar
 Port 22
 
 Host mach
-HostName 95.87.154.175
-User lstopar
+HostName 172.24.1.1
+User mach
 Port 22
 
 Host legomach
