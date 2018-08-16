@@ -11,8 +11,18 @@ HostName 172.24.1.1
 User mach
 Port 22
 
+Host officemach
+HostName 95.87.154.127
+User mach
+Port 22
+
+Host comsensusmach
+HostName 192.168.1.141
+User mach
+Port 22
+
 Host legomach
-HostName 95.87.154.151
+HostName 192.168.1.155
 User mach
 Port 22
 
@@ -21,9 +31,9 @@ HostName roadrunner.solvesall.com
 User lukas
 Port 2222
 
-Host nissa
-HostName 192.168.84.42
-User proasense
+Host midas
+HostName 185.49.3.41
+User midas
 Port 22
 
 Host legoberry
