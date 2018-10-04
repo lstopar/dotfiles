@@ -13,6 +13,11 @@ if [ -d ~/.env ] && [ ! -z "$(ls -A ~/.env)" ]; then
     done
 fi
 
+# ZSH ALIASES
+# create an alias for n-history
+alias h="n-history"
+
+
 # disable shared history
 # unsetopt share_history
 setopt nosharehistory
