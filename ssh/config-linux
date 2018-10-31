@@ -9,7 +9,7 @@ User lstopar
 Port 22
 
 Host officemach
-HostName 95.87.154.127
+HostName 95.87.154.160
 User mach
 Port 22
 
