@@ -7,6 +7,8 @@ Plugin 'gmarik/vundle'
 
 " color schemes
 Plugin 'flazz/vim-colorschemes'
+" onehalf color scheme
+Plugin 'sonph/onehalf', {'rtp': 'vim/'}
 " fancy status line
 Plugin 'vim-airline/vim-airline'
 
@@ -49,7 +51,7 @@ Plugin 'vim-scripts/ReplaceWithRegister'
 
 " FILE FORMATS
 " JSON
-Plugin 'elzr/vim-json'
+"Plugin 'elzr/vim-json'
 " JSON5
 Plugin 'GutenYe/json5.vim'
 Plugin 'hjson/vim-hjson'

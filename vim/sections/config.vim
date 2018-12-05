@@ -83,7 +83,9 @@ if has('unix')
 endif
 
 " color scheme
-colorscheme onedark
+colorscheme gruvbox
+" also set the theme for airline
+let g:airline_theme='gruvbox'
 
 " enable syntax highlighting
 syntax on
@@ -179,6 +181,13 @@ set cinoptions+=:0
 set cinoptions+=l1
 " place C++ scope declarations on the same indent as the rest of the class
 set cinoptions+=g0
+
+"=====================================
+" VIMDIFF
+"=====================================
+
+" ignore whitespaces in diff
+set diffopt+=iwhite
 
 "=====================================
 " GUI OPTIONS
