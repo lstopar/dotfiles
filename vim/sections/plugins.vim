@@ -7,8 +7,8 @@ Plugin 'gmarik/vundle'
 
 " color schemes
 Plugin 'flazz/vim-colorschemes'
-" onehalf color scheme
-Plugin 'sonph/onehalf', {'rtp': 'vim/'}
+" palenight color scheme
+Plugin 'drewtempelmeyer/palenight.vim'
 " fancy status line
 Plugin 'vim-airline/vim-airline'
 

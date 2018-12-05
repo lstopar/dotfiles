@@ -83,9 +83,7 @@ if has('unix')
 endif
 
 " color scheme
-colorscheme gruvbox
-" also set the theme for airline
-let g:airline_theme='gruvbox'
+colorscheme palenight
 
 " enable syntax highlighting
 syntax on
