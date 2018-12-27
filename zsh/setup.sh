@@ -11,14 +11,13 @@
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # plugins
-pushd . /dev/null
 cd ~/.oh-my-zsh/custom/plugins
 # syntax highlighting
 if [ ! -d "zsh-syntax-highlighting" ]; then
     echo 'Installing syntax highlighting ...'
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
-popd
+cd ../../..
 
 if [ -e "$HOME/.oh-my-zsh/custom/zshrc.zsh" ] || [ -L "$HOME/.oh-my-zsh/custom/zshrc.zsh" ]; then
     echo 'Removing zshrc.zsh ...'
