@@ -84,6 +84,7 @@ endif
 
 " color scheme
 colorscheme gruvbox
+set background=dark    " Setting dark mode
 
 " enable syntax highlighting
 syntax on
