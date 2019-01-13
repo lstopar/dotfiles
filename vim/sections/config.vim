@@ -83,7 +83,7 @@ if has('unix')
 endif
 
 " color scheme
-colorscheme palenight
+colorscheme gruvbox
 
 " enable syntax highlighting
 syntax on
