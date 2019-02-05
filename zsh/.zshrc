@@ -94,7 +94,8 @@ PATH=$PATH:/usr/local/bin
 # python
 # urltools
 
-plugins=(git autojump git-extras gitfast jsontools node npm pip python urltools vi-mode zsh-syntax-highlighting colored-man-pages zsh-navigation-tools)
+# plugins=(git autojump git-extras gitfast jsontools node npm pip python urltools vi-mode zsh-syntax-highlighting colored-man-pages zsh-navigation-tools)
+plugins=(git python zsh-syntax-highlighting colored-man-pages zsh-navigation-tools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,4 +128,3 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

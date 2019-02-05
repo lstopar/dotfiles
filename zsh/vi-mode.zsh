@@ -15,6 +15,3 @@ bindkey -a -s 'ci"' 'F"lct"'
 bindkey -a -s 'ca"' 'F"cf"'
 # go to beginning of line
 bindkey -a -s '_' '0'
-# browse history
-bindkey '^P' up-history
-bindkey '^N' down-history
