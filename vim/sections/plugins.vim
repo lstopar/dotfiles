@@ -13,10 +13,17 @@ Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'vim-airline/vim-airline'
 
 " MOVEMENT
+" ===============================
 " file explorer
 Plugin 'scrooloose/nerdtree'
+" fixes issue on Mac
+let g:NERDTreeNodeDelimiter = "\u00a0"
+" ===============================
+
+" ===============================
 " fuzzy file finder, mapped to CTRL-p
 Plugin 'ctrlpvim/ctrlp.vim'
+" ===============================
 " amazing git wrapper for vim
 Plugin 'tpope/vim-fugitive'
 " better synthax highlighting
