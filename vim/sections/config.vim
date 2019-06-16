@@ -48,13 +48,15 @@ abbr fitler filter
 " read .vimrc in the current directory
 set exrc
 " set the file format according to the OS
-if s:macos == 1
-    set fileformats=mac,unix,dos
-    set fileformat=mac
-else
-    set fileformats=unix,dos
-    set fileformat=unix
-endif
+" if s:macos == 1
+"     " set fileformats=mac,unix,dos
+"     " set fileformat=mac
+"     set fileformats=unix,dos
+"     set fileformat=unix
+" else
+"     set fileformats=unix,dos
+"     set fileformat=unix
+" endif
 
 " ignore the tags file when searching for various stuff
 set wildignore+=tags
