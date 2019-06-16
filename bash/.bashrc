@@ -7,12 +7,14 @@ if [[ $TERM == xterm  ]]; then
     export TERM=xterm-256color
 fi
 
-# Mac specific stuff
+# MacOS specific stuff
 if [[ `uname -s` == "Darwin" ]]; then
 	# echo "setting Mac specific options"
     export PATH="$HOME/bin:$PATH"
 	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+    export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+    export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 fi
 
 # extend path with $PWD

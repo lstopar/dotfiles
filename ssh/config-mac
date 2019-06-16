@@ -11,6 +11,17 @@ HostName 172.24.1.1
 User mach
 Port 22
 
+Host rootmach
+HostName 172.24.1.1
+User root
+IdentityFile ~/.ssh/machend_id_rsa
+Port 22
+
+Host homemach
+HostName home.stopar.si
+User mach
+Port 22
+
 Host officemach
 HostName 95.87.154.167
 User mach
