@@ -149,3 +149,7 @@ else
         PS1='${debian_chroot:+($debian_chroot)}\[\e['$COLOR_BLUE'm\]\u@\h \[\e['$COLOR_WHITE'm\]\W \[\e['$COLOR_BLUE'm\]$\[\e[00m\] '
     fi
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
