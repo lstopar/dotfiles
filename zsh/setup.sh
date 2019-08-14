@@ -54,9 +54,14 @@ if [ ! -d "$HOME/.env" ]; then
     mkdir $HOME/.env
 fi
 
-ln -s "$zsh_dir/zshrc.zsh" "~/.oh-my-zsh/custom/zshrc.zsh"
-ln -s "$zsh_dir/vi-mode.zsh" "~/.oh-my-zsh/custom/vi-mode.zsh"
-ln -s "$zsh_dir/lstopar.zsh-theme" "~/.oh-my-zsh/themes/"
-ln -s "$zsh_dir/.zshrc" "~/.zshrc"
-ln -s "$zsh_dir/.zshenv" "~/.zshenv"
-ln -s "$zsh_dir/.zsh_profile" "~/.zsh_profile"
+cd "$zsh_dir"/../../.oh-my-zsh/custom
+ln -s "$zsh_dir/zshrc.zsh" .
+ln -s "$zsh_dir/vi-mode.zsh" .
+
+cd "$zsh_dir"/../../.oh-my-zsh/themes
+ln -s "$zsh_dir/lstopar.zsh-theme" .
+
+cd ~
+ln -s "$zsh_dir/.zshrc" .
+ln -s "$zsh_dir/.zshenv" .
+ln -s "$zsh_dir/.zsh_profile" .
