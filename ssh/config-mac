@@ -22,6 +22,11 @@ HostName home.stopar.si
 User mach
 Port 22
 
+Host machdev
+HostName home.stopar.si
+User mach
+Port 2222
+
 Host officemach
 HostName 95.87.154.167
 User mach

@@ -5,7 +5,7 @@
 # 2) install OH-MY-ZSH
 # sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-
+zsh_dir="`pwd`"
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -39,6 +39,11 @@ if [ -e "$HOME/.zshrc" ] || [ -L "$HOME/.zshrc" ]; then
     rm $HOME/.zshrc
 fi
 
+if [ -e "$HOME/.zsh_profile" ] || [ -L "$HOME/.zshrc" ]; then
+    echo 'Removing .zsh_profile ...'
+    rm $HOME/.zsh_profile
+fi
+
 if [ -e "$HOME/.zshenv" ] || [ -L "$HOME/.zshenv" ]; then
     echo 'Removing .zprofile ...'
     rm $HOME/.zshenv
@@ -49,8 +54,9 @@ if [ ! -d "$HOME/.env" ]; then
     mkdir $HOME/.env
 fi
 
-ln -s `pwd`/zshrc.zsh ~/.oh-my-zsh/custom/zshrc.zsh
-ln -s `pwd`/vi-mode.zsh ~/.oh-my-zsh/custom/vi-mode.zsh
-ln -s `pwd`/lstopar.zsh-theme ~/.oh-my-zsh/themes/
-ln -s `pwd`/.zshrc ~/.zshrc
-ln -s `pwd`/.zshenv ~/.zshenv
+ln -s "$zsh_dir/zshrc.zsh" "~/.oh-my-zsh/custom/zshrc.zsh"
+ln -s "$zsh_dir/vi-mode.zsh" "~/.oh-my-zsh/custom/vi-mode.zsh"
+ln -s "$zsh_dir/lstopar.zsh-theme" "~/.oh-my-zsh/themes/"
+ln -s "$zsh_dir/.zshrc" "~/.zshrc"
+ln -s "$zsh_dir/.zshenv" "~/.zshenv"
+ln -s "$zsh_dir/.zsh_profile" "~/.zsh_profile"
