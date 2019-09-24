@@ -95,13 +95,17 @@ PATH=$PATH:/usr/local/bin
 # urltools
 
 # plugins=(git autojump git-extras gitfast jsontools node npm pip python urltools vi-mode zsh-syntax-highlighting colored-man-pages zsh-navigation-tools)
-plugins=(git python zsh-syntax-highlighting colored-man-pages zsh-navigation-tools)
+plugins=(git python zsh-syntax-highlighting colored-man-pages zsh-navigation-tools zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# AUTOSUGGESTIONS
+bindkey '^l' autosuggest-accept
+bindkey '^h' autosuggest-clear
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

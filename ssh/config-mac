@@ -62,6 +62,11 @@ HostName legoberry.home
 User pi
 Port 22
 
+Host home
+HostName home.stopar.si
+User lstopar
+Port 2244
+
 Host ffa
 HostName raziskave.ffa.uni-lj.si
 User lstopar
