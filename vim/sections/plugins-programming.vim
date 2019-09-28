@@ -12,6 +12,9 @@ Plugin 'honza/vim-snippets'
 " function argument handling
 " Plugin 'vim-scripts/argtextobj.vim'
 
+" SHOW INDENT LINE
+Plugin 'Yggdroot/indentLine'
+
 " TESTING
 Plugin 'majutsushi/tagbar'
 " combine NERDTree and Tagbar

@@ -105,10 +105,12 @@ set nowrap
 " set word wrap only for specific file types
 autocmd BufRead,BufNewFile   *.txt,*.tex set wrap
 
+" show both relative line numbers and the current line
 " line numbers
 set number
 " show line numbers relative to the current line
 set relativenumber
+
 " highlight the current line
 set cursorline
 " lines of text around cursor"
@@ -121,6 +123,11 @@ set sidescrolloff=5
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" show spacial characters
+set list
+" show the tab character
+set listchars=tab:!·
 
 set incsearch                   " Shows the match while typing"
 set hlsearch                    " Highlight found searches"
