@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # disable ^s and ^q (which stop and start the terminal)
-stty -ixon
+[[ $- == *i*  ]] && stty -ixon
 # set 256 color terminal
 if [[ $TERM == xterm  ]]; then
     export TERM=xterm-256color
