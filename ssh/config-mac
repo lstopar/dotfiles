@@ -27,24 +27,9 @@ HostName home.stopar.si
 User mach
 Port 2222
 
-Host officemach
-HostName 95.87.154.167
-User mach
-Port 22
-
 Host coglo
 HostName 185.49.2.157
 User lstopar
-Port 22
-
-Host comsensusmach
-HostName 192.168.1.129
-User mach
-Port 22
-
-Host legomach
-HostName 192.168.1.155
-User mach
 Port 22
 
 Host roadrunner
@@ -57,17 +42,27 @@ HostName 185.49.3.41
 User midas
 Port 22
 
+Host solvesall
+HostName 86.61.72.248
+User solvesall
+Port 2223
+
 Host legoberry
 HostName legoberry.home
+User pi
+Port 22
+
+Host home
+HostName home.stopar.si
+User lstopar
+Port 2244
+
+Host autopi
+HostName 192.168.1.190
 User pi
 Port 22
 
 Host ffa
 HostName raziskave.ffa.uni-lj.si
 User lstopar
-Port 22
-
-Host fzi
-HostName ipe-koi15.fzi.de
-User stopar
 Port 22
