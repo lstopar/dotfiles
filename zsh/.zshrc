@@ -95,7 +95,7 @@ PATH=$PATH:/usr/local/bin
 # urltools
 
 # plugins=(git autojump git-extras gitfast jsontools node npm pip python urltools vi-mode zsh-syntax-highlighting colored-man-pages zsh-navigation-tools)
-plugins=(git python zsh-syntax-highlighting colored-man-pages zsh-navigation-tools zsh-autosuggestions)
+plugins=(git python zsh-syntax-highlighting colored-man-pages zsh-navigation-tools)
 
 source $ZSH/oh-my-zsh.sh
 
