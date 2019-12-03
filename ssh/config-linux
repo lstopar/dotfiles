@@ -3,25 +3,15 @@ HostName motorka.ijs.si
 User lstopar
 Port 22
 
-Host mach
-HostName 95.87.154.161
+Host home
+HostName home.stopar.si
 User lstopar
-Port 22
+Port 2244
 
-Host officemach
-HostName 95.87.154.167
+Host machdev
+HostName home.stopar.si
 User mach
-Port 22
-
-Host legomach
-HostName 95.87.154.151
-User mach
-Port 22
-
-Host nissa
-HostName 192.168.84.42
-User proasense
-Port 22
+Port 2222
 
 Host legoberry
 HostName legoberry.home
@@ -31,9 +21,4 @@ Port 22
 Host ffa
 HostName raziskave.ffa.uni-lj.si
 User lstopar
-Port 22
-
-Host fzi
-HostName ipe-koi15.fzi.de
-User stopar
 Port 22
