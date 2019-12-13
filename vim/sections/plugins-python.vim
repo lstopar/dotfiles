@@ -9,6 +9,9 @@ Plugin 'hail2u/vim-css3-syntax', { 'for': 'css'  } " CSS3 syntax support
 " jump to matching tags
 Plugin 'tmhedberg/matchit'
 
+" SHOW INDENT LINE
+Plugin 'Yggdroot/indentLine'
+
 " JSON
 let g:vim_json_syntax_conceal = 0
 
