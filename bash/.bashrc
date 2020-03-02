@@ -16,6 +16,12 @@ if [[ `uname -s` == "Darwin" ]]; then
     export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
     export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
     export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+    export PATH="/usr/local/opt/gnu-indent/libexec/gnubin:$PATH"
+    export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+    export PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"
+    export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+
+    export LDFLAGS="-L/usr/local/opt/libffi/lib"
 fi
 
 # extend path with $PWD
