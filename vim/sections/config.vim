@@ -130,7 +130,7 @@ set list
 set listchars=tab:!·
 
 set incsearch                   " Shows the match while typing"
-set hlsearch                    " Highlight found searches"
+set nohlsearch                    " Highlight found searches"
 set ignorecase                  " Search case insensitive...
 set smartcase                   " ... but not when search pattern contains upper case characters
 " turn on spell checking
@@ -267,6 +267,7 @@ nnoremap q: :q
 " save all instead of save
 " nnoremap <silent> :w :wa
 
+" map CTRL-s to write all buffers
 if s:macos == 1
     " map CTRL-s to write all buffers
     nnoremap <silent> <C-s> :wa<cr>
