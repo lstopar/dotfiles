@@ -1,8 +1,12 @@
-" JavaScript stuff
+" JavaScript indentation and syntax support
 Plugin 'pangloss/vim-javascript'
+
+" disable concealing of JavaScript keywords
+set conceallevel=0
+
+" Hihglight JavaScript brackets, semicolons, comparison symbols, etc.
 Plugin 'jelera/vim-javascript-syntax'
-" debugging Node.js
-Plugin 'sidorares/node-vim-debugger'
+
 " Node.js plugin
 Plugin 'moll/vim-node'
 " auto close (X)HTML tags
@@ -11,19 +15,6 @@ Plugin 'ap/vim-css-color', { 'for': ['css','stylus','scss']  } " set the backgro
 Plugin 'hail2u/vim-css3-syntax', { 'for': 'css'  } " CSS3 syntax support
 " jump to matching tags
 Plugin 'tmhedberg/matchit'
-
-" conceal
-set cole=0
-let g:javascript_conceal_function       = "ƒ"
-let g:javascript_conceal_null           = "ø"
-let g:javascript_conceal_this           = "@"
-let g:javascript_conceal_return         = "<"
-let g:javascript_conceal_undefined      = "¿"
-let g:javascript_conceal_NaN            = "ℕ"
-let g:javascript_conceal_prototype      = "¶"
-let g:javascript_conceal_static         = "•"
-let g:javascript_conceal_super          = "Ω"
-let g:javascript_conceal_arrow_function = "⇒"
 
 " JSON
 let g:vim_json_syntax_conceal = 0

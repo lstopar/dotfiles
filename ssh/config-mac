@@ -10,16 +10,12 @@ Host mach
 HostName 172.24.1.1
 User mach
 Port 22
+StrictHostKeyChecking no
 
 Host rootmach
 HostName 172.24.1.1
 User root
 IdentityFile ~/.ssh/machend_id_rsa
-Port 22
-
-Host homemach
-HostName home.stopar.si
-User mach
 Port 22
 
 Host machdev
@@ -57,6 +53,11 @@ HostName home.stopar.si
 User lstopar
 Port 2244
 
+Host home-dev
+HostName home.stopar.si
+User lstopar
+Port 2266
+
 Host autopi
 HostName 192.168.1.190
 User pi
@@ -65,4 +66,9 @@ Port 22
 Host ffa
 HostName raziskave.ffa.uni-lj.si
 User lstopar
+Port 22
+
+Host storage
+HostName storage-4tb.home
+User sshd
 Port 22
