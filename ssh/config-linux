@@ -18,6 +18,11 @@ HostName 95.87.154.151
 User mach
 Port 22
 
+Host home-dev
+HostName home.stopar.si
+User lstopar
+Port 2266
+
 Host nissa
 HostName 192.168.84.42
 User proasense
