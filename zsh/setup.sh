@@ -1,5 +1,7 @@
 #/bin/bash
 
+set -e
+
 # 1) install ZSH
 # sudo -apt-get install zsh
 # 2) install OH-MY-ZSH
@@ -35,11 +37,6 @@ if [ -e "$HOME/.oh-my-zsh/custom/vi-mode.zsh" ] || [ -L "$HOME/.oh-my-zsh/custom
     rm $HOME/.oh-my-zsh/custom/vi-mode.zsh
 fi
 
-if [ -e "$HOME/.oh-my-zsh/themes/lstopar.zsh-theme" ] || [ -L "$HOME/.oh-my-zsh/themes/lstopar.zsh-theme" ]; then
-    echo 'Removing theme ...'
-    rm $HOME/.oh-my-zsh/themes/lstopar.zsh-theme
-fi
-
 if [ -e "$HOME/.zshrc" ] || [ -L "$HOME/.zshrc" ]; then
     echo 'Removing .zshrc ...'
     rm $HOME/.zshrc
@@ -63,9 +60,6 @@ fi
 cd "$zsh_dir"/../../.oh-my-zsh/custom
 ln -s "$zsh_dir/zshrc.zsh" .
 ln -s "$zsh_dir/vi-mode.zsh" .
-
-cd "$zsh_dir"/../../.oh-my-zsh/themes
-ln -s "$zsh_dir/lstopar.zsh-theme" .
 
 cd ~
 ln -s "$zsh_dir/.zshrc" .
