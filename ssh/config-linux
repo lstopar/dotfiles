@@ -22,3 +22,13 @@ Host ffa
 HostName raziskave.ffa.uni-lj.si
 User lstopar
 Port 22
+
+Host tus
+    HostName ubuntu-dev-ls.engrotus.loc
+    User luka
+    Port 22
+
+Host siel
+    HostName compute1.engrotus.serv.si
+    User develop
+    Port 65022
